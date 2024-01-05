@@ -16,8 +16,8 @@ int main() {
     // print pointer pointVar
     cout << "pointVar = " << pointVar << endl;
 
-    //print the content of the addres pointVar points to
-    cout << "Content of the addres pointed to by pointVar (*pointVar) = " << *pointvar << endl;
+    // print the content of the address pointed to by pointVar
+    cout << "Content of the address pointed to by pointVar (*pointVar) = " << *pointVar << endl;
 
     return 0;
 }
