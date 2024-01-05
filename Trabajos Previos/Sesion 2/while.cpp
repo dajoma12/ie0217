@@ -12,5 +12,6 @@ int main() {
         cout << i << " ";
         ++i;
     }
+    
     return 0;
 }
