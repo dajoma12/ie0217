@@ -2,7 +2,7 @@
 #include "adivina.hpp"
 using namespace std;
 
-int dificultad = 1;
+int dificultad = 1; // Variable Global
 
 int main(){
 
