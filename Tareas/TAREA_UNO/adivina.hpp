@@ -1,12 +1,26 @@
 #ifndef ADIVINA_HPP
 #define ADIVINA_HPP
 
-int aleatorio(int min, int max);
+extern int dificultad; 
 
+struct Datos{
+    int max;
+    int min;
+    int N;
+    int aleatorio;
+};
+
+void solicitarIntervalo(Datos &valores);
 void mostrarMenu();
-void procesarOpcion(int numero, int min, int max);
+void procesarOpcion(Datos &valores);
 
-void iniciarJuego(int num_Aleatorio, int min, int max);
-void imprimirIntervalo(int min, int max);
+void cambiarDificultad();
+void cambiarIntervalo(Datos &intervalo);
+
+
+void iniciarJuego(Datos &valores);
+int aleatorio(Datos valores);
+void primerModo(Datos valores);
+void segundoModo(Datos valores);
 
 #endif

@@ -2,15 +2,17 @@
 #include "adivina.hpp"
 using namespace std;
 
-int main(int argc, char* argv[]){
-    
-    int minimo = stoi(argv[1]);
-    int maximo = stoi(argv[2]);
-    int num = aleatorio(minimo, maximo);
+int dificultad = 1;
 
+int main(){
+
+    Datos valores; // Inicializacion de un tipo de dato de estructura
+    cout << "\n-- Sea bienvenido al juego! --" <<endl; 
+    
+    solicitarIntervalo(valores); // Solicitar un intervalo de valores
     while(1){
-        mostrarMenu();
-        procesarOpcion(num, minimo, maximo);
+        mostrarMenu(); // Mostar el menu de opciones
+        procesarOpcion(valores); // Solicitar una opcion
     }
 
     return 0;
