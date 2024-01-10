@@ -15,12 +15,11 @@ struct Datos{
 // Funciones prototipo
 void solicitarIntervalo(Datos &valores);
 void mostrarMenu();
-
+// Funciones prototipo
 void procesarOpcion(Datos &valores);
 void cambiarDificultad();
 void cambiarIntervalo(Datos &intervalo);
-
-
+// Funciones prototipo
 void iniciarJuego(Datos &valores);
 int aleatorio(Datos valores);
 void primerModo(Datos valores);
