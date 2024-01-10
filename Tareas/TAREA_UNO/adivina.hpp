@@ -1,19 +1,22 @@
 #ifndef ADIVINA_HPP
 #define ADIVINA_HPP
 
+// Inicializacion de una variable global
 extern int dificultad; 
 
+// Definicion de una estructura
 struct Datos{
-    int max;
-    int min;
-    int N;
-    int aleatorio;
+    int max; // Valor minimo
+    int min; // Valor maximo
+    int N; // Intentos
+    int aleatorio; // Numero aleatorio
 };
 
+// Funciones prototipo
 void solicitarIntervalo(Datos &valores);
 void mostrarMenu();
-void procesarOpcion(Datos &valores);
 
+void procesarOpcion(Datos &valores);
 void cambiarDificultad();
 void cambiarIntervalo(Datos &intervalo);
 
