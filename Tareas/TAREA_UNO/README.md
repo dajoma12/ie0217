@@ -77,7 +77,21 @@ Resulta útil para tener un código más ordenado y mejor estructurado. El propo
 
 **13. Defina qué es el Type Casting en C++ y explique su utilidad. Proporcione ejemplos de situaciones en las que se emplea el Type Casting y cómo se realiza.**
 
+El "Type Casting" en C++ se refiere a la conversión de un tipo de dato a otro. Puede ser necesario cuando se trabaja con variables de diferentes tipos y se necesita realizar operaciones entre ellas o asignar valores de un tipo a otro.
+
+~~~
+int entero = 5;
+double decimal = entero;  // De int a double
+~~~
+
 **14. ¿Por qué la sentencia goto no es recomendable en programación moderna? Mencione ejemplos de cómo se pueden lograr los mismos resultados sin el uso de goto.**
+
+La instrucción goto transfiere incondicionalmente el control a la instrucción etiquetada por el identificador especificado [?](https://learn.microsoft.com/es-es/cpp/cpp/goto-statement-cpp?view=msvc-170). 
+
+El uso excesivo de `goto` puede hacer que el código sea difícil de entender y mantener, aumenta la probabilidad de errores, rompe la programación estructurada... etc.
+
+Ejemplos de alternativas es utilizar `break` en ciclos cuando se desea salir de este, o volver a ciclar con `continue`. En el caso de funciones, es recomendable utilizar la alternativa `return`.
+
 
 **15. ¿Dónde y cómo se guardan las variables que se crean en C++? Explique la diferencia entre el almacenamiento de variables locales y globales.**
 
@@ -87,7 +101,13 @@ Las variables locales se almacenan en la pila, que es una región de memoria que
 
 **16. ¿Cuál es la diferencia entre pasar parámetros por valor, por referencia y por puntero?**
 
+Al pasar parámetros por valor, el programa recibe una copia del valor del argumento. Al ser por referencia, recibe una referencia al valor original. Por último, al pasar por puntero, recibe la dirección de memoria del valor original a través de un puntero.
+
 **17. Cuando se usa un puntero para apuntar a un arreglo en C++, ¿a qué valor o dirección apunta inicialmente? Describa cómo sería la forma de acceder a todos los datos de ese arreglo mediante el puntero.**
+
+Cuando se usa un puntero para apuntar a un arreglo en C++, el puntero apunta inicialmente a la dirección de memoria del primer elemento del arreglo. En otras palabras, el valor del puntero es la dirección de memoria del primer elemento del arreglo.
+
+Para acceder a todos elementos de un arreglo se puede utilizar la aritmétrica de punteros. La forma de hacerlo es declarando un puntero que a punte a la primera dirección del arreglo y luego, mediante un ciclo, se aumenta el puntero para ir recorriendo todas las direcciones.
 
 **18. Explique para qué son empleados los punteros dobles en C++. Proporcione ejemplos de situaciones en las que los punteros dobles son necesarios o beneficiosos.**
 
