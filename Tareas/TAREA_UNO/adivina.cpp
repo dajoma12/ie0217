@@ -29,10 +29,10 @@ void procesarOpcion(Datos &valores){
             iniciarJuego(valores);
             break;
         case 2:
-            // cambiarDificultad();
+            cambiarDificultad();
             break;
         case 3:
-            // cambiarIntervalo();
+            cambiarIntervalo(valores);
             break;
         case 4:
             std::cout << "\nCerrando el programa...\n";
@@ -147,4 +147,50 @@ void segundoModo(Datos valores) {
     exit(0);
 }
 
+void cambiarDificultad(){
+    int opcion;
+    std::cout << "\nDificultad actual: ";
 
+    if (dificultad == 1){
+        std::cout << "\nNormal*\nDificil\n";
+    }
+
+    else{
+        std::cout << "\n- Normal\n- Dificil*\n";
+    }
+
+    std::cout << "\nDesea cambiar a la otra?"<<std::endl;
+    std::cout << "1. Si\n2. No" <<std::endl;
+    std::cout << "\nIngrese la opcion para cambiar: ";
+    std::cin >> opcion;
+
+    if (opcion == 1){
+        std::cout << "\nCambiando a dificil..." <<std::endl;
+        dificultad = 2;
+    }
+
+    else{
+        std::cout << "\nVolviendo a normal..." <<std::endl;
+        dificultad = 1;
+    }
+}
+
+void cambiarIntervalo(Datos &intervalo){
+    int opcion;
+    std::cout << "\nIntervalo actual de valores: ["
+        << intervalo.min << ", " << intervalo.max<<"]" << std::endl;
+
+    std::cout << "\nDesea cambiar el intervalo actual?" << std::endl;
+    std::cout << "1. Si\n2. No" <<std::endl;
+    std::cout << "\nIngrese la opcion para cambiar: ";
+    std::cin >> opcion;
+
+    if (opcion == 1){
+        solicitarIntervalo(intervalo);
+        std::cout << "\nAplicando cambios..." << std::endl;
+    }
+
+    else{
+        std::cout << "\nSin cambios..." << std::endl;
+    }
+}
