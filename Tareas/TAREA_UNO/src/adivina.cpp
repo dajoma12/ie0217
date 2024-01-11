@@ -1,10 +1,21 @@
+/**
+ * @file adivina.cpp
+ * @brief Archivo principal que contiene la implementación del juego de adivinanza.
+ * @version 1.0
+ * @date 08/06/2014
+ * @author Dajoma12
+ */
+
 #include "adivina.hpp"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
 #include <cmath>
 
-// Solicita el intervalo de valores
+/**
+ * @brief Solicita al usuario ingresar el intervalo de valores para el juego.
+ * @param valores Estructura que almacena el intervalo de valores.
+ */
 void solicitarIntervalo(Datos &valores){
     std::cout << "Ingrese el valor minimo del intervalo: ";
     // Ingresa el valor minimo puesto por el usuario
@@ -14,7 +25,9 @@ void solicitarIntervalo(Datos &valores){
     std::cin >> valores.max;
 }
 
-// Muestra un menu de opciones
+/**
+ * @brief Muestra un menú de opciones en la consola.
+ */
 void mostrarMenu(){
     std::cout << "\n-- Menu -- \n";
     std::cout << "1. Inicio de juego\n";
@@ -23,7 +36,10 @@ void mostrarMenu(){
     std::cout << "4. Cierre del programa\n";
 }
 
-// Procesa la opcion ingresada por el usuario
+/**
+ * @brief Procesa la opción ingresada por el usuario.
+ * @param valores Estructura que almacena el intervalo de valores.
+ */
 void procesarOpcion(Datos &valores){
     int opcion; // Inicializa una variables
     std::cout << "\nIngrese una opcion: ";
@@ -52,7 +68,11 @@ void procesarOpcion(Datos &valores){
     }
 }
 
-// Calcula un valor aleatorio
+/**
+ * @brief Genera un valor aleatorio en el intervalo especificado.
+ * @param valores Estructura que contiene el intervalo de valores.
+ * @return Valor aleatorio generado.
+ */
 int aleatorio(Datos valores){
     srand(time(NULL)); // Garantiza que la secuencia sea diferente
 
@@ -62,7 +82,10 @@ int aleatorio(Datos valores){
     return 1 + rand() % ((max + min) - min); // Retorna un valor aleatorio
 }
 
-// Inicia el juego
+/**
+ * @brief Inicia el juego, calcula el número de intentos y el valor aleatorio.
+ * @param valores Estructura que contiene el intervalo de valores.
+ */
 void iniciarJuego(Datos &valores){
     // Calcula el numero de intentos
     valores.N = round((abs(valores.max - valores.min) + 1) / 3);
@@ -84,7 +107,10 @@ void iniciarJuego(Datos &valores){
     }
 }
 
-// Inicia el primer modo de juego
+/**
+ * @brief Inicia el primer modo de juego.
+ * @param valores Estructura que contiene datos del juego.
+ */
 void primerModo(Datos valores){
     int num_Ingresado; // Inicializa una variable
 
@@ -120,7 +146,10 @@ void primerModo(Datos valores){
 }
 
 
-// Segundo modo de juego
+/**
+ * @brief Inicia el segundo modo de juego.
+ * @param valores Estructura que contiene datos del juego.
+ */
 void segundoModo(Datos valores) {
     int num_Ingresado; // Inicializacion de una variable
 
@@ -174,7 +203,9 @@ void segundoModo(Datos valores) {
     exit(0);
 }
 
-// Funcion para cambiar dificultad
+/**
+ * @brief Cambia la dificultad del juego.
+ */
 void cambiarDificultad(){
     int opcion; // Inicializa una variable
     std::cout << "\nDificultad actual: ";
@@ -221,7 +252,10 @@ void cambiarDificultad(){
     }
 }
 
-// Cambia el intervalo de valores
+/**
+ * @brief Cambia el intervalo de valores del juego.
+ * @param intervalo Estructura que contiene el intervalo de valores.
+ */
 void cambiarIntervalo(Datos &intervalo){
     int opcion; // Inicializa un varuable
 
