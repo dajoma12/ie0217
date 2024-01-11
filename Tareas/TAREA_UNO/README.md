@@ -21,7 +21,7 @@ La principal diferencia es que C++ se caracteriza por ser un lenguaje de program
 
 **3. ¿Qué es un linker en el contexto de un lenguaje de programación compilado? ¿Cuál es su función principal y por qué es esencial en el proceso de compilación?**
 
-
+En el contexto de un lenguaje de programación compilado, a grandes rasgos, un linker es un enlazador. Su función principal es combinar varios archivos objeto generados por el compilador en un programa ejecutable o biblioteca compartida. Es esencial dado que facilita la creación de programas complejos al unir todas las partes necesarias en un ejecutable funcional.
 
 **4. Describa las diferencias clave entre los tipos de datos derivados y primarios en C++.**
 
@@ -71,9 +71,9 @@ La principal diferencia es que el bucle `while` se ejecuta siempre y cuando se c
 
 Resulta útil para tener un código más ordenado y mejor estructurado. El proposito de cada tipo de archivo es el siguiente:
 
-- `.hpp` Se colocan los datos estructurados y las funciones prototipos.
-- `.cpp` Van las definiciones de las funciones
-- `main.cpp`
+- `.hpp` Contienen las declaraciones de clases, estructuras, funciones y variables.
+- `.cpp` Contienen las implementaciones detalladas de las funciones y métodos declarados en los archivos .hpp. Aquí es donde se escribe el código real que realiza las operaciones definidas en la interfaz.
+- `main.cpp` Contiene la función principal main() que se ejecuta cuando el programa inicia. Es el punto de entrada del programa.
 
 **13. Defina qué es el Type Casting en C++ y explique su utilidad. Proporcione ejemplos de situaciones en las que se emplea el Type Casting y cómo se realiza.**
 
@@ -86,7 +86,7 @@ double decimal = entero;  // De int a double
 
 **14. ¿Por qué la sentencia goto no es recomendable en programación moderna? Mencione ejemplos de cómo se pueden lograr los mismos resultados sin el uso de goto.**
 
-La instrucción goto transfiere incondicionalmente el control a la instrucción etiquetada por el identificador especificado [?](https://learn.microsoft.com/es-es/cpp/cpp/goto-statement-cpp?view=msvc-170). 
+La instrucción goto transfiere incondicionalmente el control a la instrucción etiquetada por el identificador especificado [6](https://learn.microsoft.com/es-es/cpp/cpp/goto-statement-cpp?view=msvc-170). 
 
 El uso excesivo de `goto` puede hacer que el código sea difícil de entender y mantener, aumenta la probabilidad de errores, rompe la programación estructurada... etc.
 
@@ -111,10 +111,12 @@ Para acceder a todos elementos de un arreglo se puede utilizar la aritmétrica d
 
 **18. Explique para qué son empleados los punteros dobles en C++. Proporcione ejemplos de situaciones en las que los punteros dobles son necesarios o beneficiosos.**
 
+Los punteros dobles en C++ son utilizados para manejar la dirección de memoria de otro puntero, que a su vez apunta a otra dirección de memoria que contiene el valor deseado. En el caso del manejo de memoria dinámica, resulta ser mayoritariamente eficiente utilizar punteros dobles.
+
 
 **19. ¿Cuál es la diferencia entre un break y un continue en los bucles de C++?**
 
-La instrucción break : termina la instrucción de iteración contenedora más próxima o la instrucción switch . La instrucción continue : inicia una nueva iteración de la instrucción de iteración contenedora más próxima [?](https://learn.microsoft.com/es-es/dotnet/csharp/language-reference/statements/jump-statements).
+La instrucción break : termina la instrucción de iteración contenedora más próxima o la instrucción switch . La instrucción continue : inicia una nueva iteración de la instrucción de iteración contenedora más próxima [7](https://learn.microsoft.com/es-es/dotnet/csharp/language-reference/statements/jump-statements).
 
 **20. ¿Para qué se utiliza la directiva #ifndef?**
 
@@ -122,20 +124,40 @@ Se utiliza para comprobar sino se ha definido un macro. Su acrónimo se puede tr
 
 **21. ¿Qué es el puntero this en C++?**
 
-El puntero `this` es una variable predefinida para todas las funciones u operadores miembro de una clase. Este puntero contiene la dirección del objeto concreto de la clase al que se está aplicando la función o el operador miembro. Se puede decir que *this es un alias del objeto correspondiente [?](https://ccia.ugr.es/~jfv/ed1/c++/cdrom3/TIC-CD/web/tema23/teoria_1.htm).  
+El puntero `this` es una variable predefinida para todas las funciones u operadores miembro de una clase. Este puntero contiene la dirección del objeto concreto de la clase al que se está aplicando la función o el operador miembro. Se puede decir que *this es un alias del objeto correspondiente [8](https://ccia.ugr.es/~jfv/ed1/c++/cdrom3/TIC-CD/web/tema23/teoria_1.htm).  
 
 **22. ¿Qué es un puntero nullptr?**
 
-Representa un valor de puntero nulo. Se usa un valor para indicar que un tipo de identificador de objeto, puntero interior o puntero nativo no apunta a un objeto. [?](https://learn.microsoft.com/es-es/cpp/extensions/nullptr-cpp-component-extensions?view=msvc-170)
+Representa un valor de puntero nulo. Se usa un valor para indicar que un tipo de identificador de objeto, puntero interior o puntero nativo no apunta a un objeto. [9](https://learn.microsoft.com/es-es/cpp/extensions/nullptr-cpp-component-extensions?view=msvc-170)
 
 **23. ¿Cuál es la diferencia entre un arreglo y una lista en C++?**
 
-Los arreglos son estructuras de datos estáticas, ya que hay que declarar su tamaño antes de utilizarlos. A diferencia de los arreglos, las listas son estructuras de datos que pueden ir creciendo conforme se vaya requiriendo, por eso se considera que es una estructura de datos dinámica [?](https://www.google.com/search?q=diferencia+entre+un+arreglo+y+una+lista+en+C%2B%2B&rlz=1C1SQJL_esCR904CR904&oq=diferencia+entre+un+arreglo+y+una+lista+en+C%2B%2B&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIKCAEQABiABBiiBDIKCAIQABiABBiiBNIBCDg1NzZqMGo0qAIAsAIA&sourceid=chrome&ie=UTF-8). 
+Los arreglos son estructuras de datos estáticas, ya que hay que declarar su tamaño antes de utilizarlos. A diferencia de los arreglos, las listas son estructuras de datos que pueden ir creciendo conforme se vaya requiriendo, por eso se considera que es una estructura de datos dinámica [10](https://www.google.com/search?q=diferencia+entre+un+arreglo+y+una+lista+en+C%2B%2B&rlz=1C1SQJL_esCR904CR904&oq=diferencia+entre+un+arreglo+y+una+lista+en+C%2B%2B&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIKCAEQABiABBiiBDIKCAIQABiABBiiBNIBCDg1NzZqMGo0qAIAsAIA&sourceid=chrome&ie=UTF-8). 
 
 **24. ¿Qué es una función prototipo?**
 
-Es una declaración de función que sirve para indicar al compilador los tipos de retorno y los de los parámetros de una función, de modo que compruebe si son del tipo correcto cada vez que se use esta función dentro del programa, o para hacer las conversiones de tipo cuando sea necesario [?](https://aprendiendoarduino.wordpress.com/tag/prototipos-de-funciones/).
+Es una declaración de función que sirve para indicar al compilador los tipos de retorno y los de los parámetros de una función, de modo que compruebe si son del tipo correcto cada vez que se use esta función dentro del programa, o para hacer las conversiones de tipo cuando sea necesario [11](https://aprendiendoarduino.wordpress.com/tag/prototipos-de-funciones/).
 
 **25. ¿Investigue qué es un memory leak?**
 
-Una memory leak ocurre cuando una aplicación no libera la memoria que ya no necesita, lo que resulta en una acumulación progresiva de memoria no utilizada [?](https://keepcoding.io/blog/que-es-un-memory-leak-y-como-evitarlo/).
+Una memory leak ocurre cuando una aplicación no libera la memoria que ya no necesita, lo que resulta en una acumulación progresiva de memoria no utilizada [12](https://keepcoding.io/blog/que-es-un-memory-leak-y-como-evitarlo/).
+
+
+## Parte Automatización - Makefile
+### Parte Teórica
+
+**1. ¿Qué suelen contener las variables CC, CFLAGS, CXXFLAGS y LDFLAGS en un makefile?**
+
+
+**2. ¿De qué se compone una regla en un Makefile?**
+
+**3. Defina qué es un target y cómo se relaciona con sus prerequisitos.**
+
+**4. ¿Para qué se utiliza la bandera -I, -c y -o del compilador gcc?**
+
+**5. ¿Cómo se definen y se utilizan las variables en un Makefile? ¿Qué utilidad tienen?**
+
+**6. ¿Qué utilidad tiene un @ en un Makefile?**
+
+**7. ¿Para qué se utiliza .PHONY en un Makefile?**
+
