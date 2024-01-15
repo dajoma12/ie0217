@@ -83,7 +83,9 @@
 
 11. ¿Qué es la memoria dinámica en C++ y cuándo se utiliza comúnmente?
 
-    La memoria dinámica es un espacio de almacenamiento que se puede solicitar en tiempo de ejecución. Además de solicitar espacios de almacenamiento, también se puede liberar (en tiempo de ejecución) cuando se deje de necesitar.
+    La `memoria dinámica` es un espacio de almacenamiento que se puede solicitar en tiempo de ejecución. Además de solicitar espacios de almacenamiento, también se puede liberar (en tiempo de ejecución) cuando se deje de necesitar [[?]](https://codigomaldito.blogspot.com/2006/01/memoria-dinamica-new-y-delete.html).
+
+    Normalmente, se utiliza para almacenar grandes volúmenes de datos, cuya cantidad exacta se desconoce al implementar el programa .
 
 
 12. Explique la diferencia entre new y malloc en C++. ¿Cuándo debería utilizar uno sobre el otro?
