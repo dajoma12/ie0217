@@ -2,15 +2,16 @@
 // Fecha: 2024-01-14
 
 #include <iostream>
-#include "MaterialLectura.hpp"
+#include "Libro.hpp"
 using namespace std;
 
 int main() {
-    MaterialLectura Ejemplo("La Sombra del Viento", "Grupo 1", "Tela","Carlos Ruiz Zafón", "Penguin Random House",
-                       "Ficción", "Disponible", 500, 25.99);
+    Libro Ejemplo("La Sombra del Viento", "Grupo 1", "Tela","Carlos Ruiz Zafon", "Penguin Random House",
+                       "Ficcion", "Disponible", 500, 25.99, "Va de monos", "Tio conejo");
 
     // Llama a la función imprimirInfo() para mostrar la información del objeto Ejemplo
-    Ejemplo.imprimirInfo();
+    Ejemplo.infoLibro();
+    Ejemplo.volumenLibro();
 
     return 0;
 }

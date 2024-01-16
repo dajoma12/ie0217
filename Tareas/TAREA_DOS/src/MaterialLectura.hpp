@@ -19,7 +19,6 @@ class MaterialLectura {
 
         MaterialLectura(string titulo, string grupo, string tipo, string autor,
                         string editorial, string genero, string estado, int hojas, float precio);
-
         void imprimirInfo();
 };
 
