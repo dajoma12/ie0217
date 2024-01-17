@@ -25,3 +25,7 @@ $(TARGET): $(OBJECTS)
 # Regla para limpiar los archivos generados
 clean:
 	del $(TARGET) $(OBJECTS)
+
+# Regla para correr el archivo generado
+run: $(TARGET)
+	./$(TARGET)
