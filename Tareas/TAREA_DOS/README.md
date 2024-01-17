@@ -5,7 +5,8 @@
 ## Instrucciones de ejecucción
 
 Para poder ejecutar este código debe dentro de la carpeta `src` y ejecutar lo siguiente en su terminal para crear el ejecutable.
-        g++ -o material.exe .\main.cpp .\Libro.cpp .\Noticia.cpp .\MaterialLectura.cpp .\MaterialAudiovisual.cpp .\Pelicula.cpp .\MaterialOrdenado.cpp .\Podcast.cpp
+
+    g++ -o material.exe .\main.cpp .\Libro.cpp .\Noticia.cpp .\MaterialLectura.cpp .\MaterialAudiovisual.cpp .\Pelicula.cpp .\MaterialOrdenado.cpp .\Podcast.cpp
 
 Una vez creado, basta con correr el ejecutable creado dentro de la carpeta `.\material.exe`
 
