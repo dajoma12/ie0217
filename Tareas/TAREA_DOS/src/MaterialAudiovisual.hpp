@@ -6,7 +6,7 @@
 using namespace std;
 
 class MaterialAudiovisual {
-    protected:
+    public:
         string titulo;
         string grupo;
         string tipo;
@@ -15,8 +15,7 @@ class MaterialAudiovisual {
         string genero;
         string estado;
         float precio;
-
-    public:    
+  
         void imprimirInfo();
         MaterialAudiovisual(string titulo, string grupo, string tipo, string autor,
                         int duracion, string genero, string estado, float precio);        
