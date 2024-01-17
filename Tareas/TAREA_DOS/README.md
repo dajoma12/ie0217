@@ -12,6 +12,20 @@ Una vez creado el ejecuta, basta con correrlo dentro de la carpeta.
 
     .\material.exe
 
+Otra de las posible formas de ejecutarlo es haciendo uso del Makefila, para ello debe estar ubicado dentro de la carpeta `TAREA_DOS`, carpeta en donde se encuentra el archivo Makefile, y ejecutar el siguiente comando en la terminal:
+
+    Mingw32-make -f Makefile
+
+Esto formará el archivo ejecutable, ya luego si desea ejecutarlo puede realizar el siguiente comando:
+
+     Mingw32-make -f run
+
+Finalmente, si desea borrar los archivos creados, solo basta con hacer un:
+
+     Mingw32-make -f clean
+
+Nota: Todos estos comandos deben ser siempre ejecutados desde la carpeta `TAREA_DOS` de lo contrario no servirán.
+
 ## Parte teórica
 
 1. **Conceptos Fundamentales:** Define qué es la programación orientada a objetos y explica sus principios fundamentales.
@@ -78,6 +92,9 @@ Una vez creado el ejecuta, basta con correrlo dentro de la carpeta.
 
     Los constructores y destructores son funciones de miembros especiales de las clases que se utilizan para construir y destruir objetos de clase. La `construcción` puede implicar la asignación de memoria y la inicialización de objetos. La `destrucción` puede implicar la limpieza y desasignación de memoria para objetos [[6]](https://www.ibm.com/docs/es/i/7.5?topic=only-overview-constructors-destructors-c).
 
+    Un ejemplo de `constructor`, es cuando se crea un objeto de una clase. El proposito es inicializar los atributos y realizar tarea necesaria para hacer válido el objeto.
+
+    Siguiendo con el ejemplo anterior, un `destructor` también se inicia automáticamente cuando un objeto se sale de su ámbito o porque explicitamente se le indica con el comando `delete`.
 
 9. **Sobrecarga de Operadores:** Explica qué es la sobrecarga de operadores y proporciona un ejemplo de cómo se implementa en C++.
 
@@ -88,13 +105,15 @@ Una vez creado el ejecuta, basta con correrlo dentro de la carpeta.
 
 10. **Templates:** Describe el concepto de templates en C++. ¿En qué situaciones sería útil utilizar templates?
 
-    Una `plantilla` es una construcción que genera un tipo o función normal en tiempo de compilación en función de los argumentos que proporciona el usuario para los parámetros de la plantilla [[7]](https://learn.microsoft.com/es-es/cpp/cpp/templates-cpp?view=msvc-170).
+    Son una característica del lenguaje que permiten crear código genérico que puede trabajar con diferentes tipos de datos y estructuras de datos. Los templates se definen mediante la palabra clave template seguida de una lista de parámetros de tipo, que pueden ser nombres de tipos o valores constantes. 
+
+    Resultan útiles a la hora de escribir funciones y clases que pueden ser usadas con distintos tipos de datos sin necesidad de escribir código específico para cada tipo.
 
 11. ¿Qué es la memoria dinámica en C++ y cuándo se utiliza comúnmente?
 
-    La `memoria dinámica` es un espacio de almacenamiento que se puede solicitar en tiempo de ejecución. Además de solicitar espacios de almacenamiento, también se puede liberar (en tiempo de ejecución) cuando se deje de necesitar [[?]](https://codigomaldito.blogspot.com/2006/01/memoria-dinamica-new-y-delete.html).
+    La `memoria dinámica` es un espacio de almacenamiento que se puede solicitar en tiempo de ejecución. Además de solicitar espacios de almacenamiento, también se puede liberar (en tiempo de ejecución) cuando se deje de necesitar [[7]](https://codigomaldito.blogspot.com/2006/01/memoria-dinamica-new-y-delete.html).
 
-    Normalmente, se utiliza para almacenar grandes volúmenes de datos, cuya cantidad exacta se desconoce al implementar el programa .
+    Normalmente, se utiliza para almacenar grandes volúmenes de datos, cuya cantidad exacta se desconoce al implementar el programa. Pero en general el programador puede hacer uso de ella según vea necesario.
 
 
 12. Explique la diferencia entre new y malloc en C++. ¿Cuándo debería utilizar uno sobre el otro?
@@ -105,48 +124,48 @@ Una vez creado el ejecuta, basta con correrlo dentro de la carpeta.
 
 13. ¿Qué es una fuga de memoria (memory leak) y cómo puede evitarse en programas en C++?
 
-    `Una memory leak` ocurre cuando una aplicación no libera la memoria que ya no necesita, lo que resulta en una acumulación progresiva de memoria no utilizada [[9]](https://keepcoding.io/blog/que-es-un-memory-leak-y-como-evitarlo/).
+    `Una memory leak` ocurre cuando una aplicación no libera la memoria que ya no necesita, lo que resulta en una acumulación progresiva de memoria no utilizada [[8]](https://keepcoding.io/blog/que-es-un-memory-leak-y-como-evitarlo/).
 
-    La formas de evitarlo es realizando un seguimiento del uso de la memoria, liberando recursos correctamente, evitando ciclos de referencia y realizando pruebas exhaustivas [[9]](https://keepcoding.io/blog/que-es-un-memory-leak-y-como-evitarlo/).
+    La formas de evitarlo es realizando un seguimiento del uso de la memoria, liberando recursos correctamente, evitando ciclos de referencia y realizando pruebas exhaustivas [[8]](https://keepcoding.io/blog/que-es-un-memory-leak-y-como-evitarlo/).
 
 14. Explique el concepto de punteros inteligentes (smart pointers) y proporcione ejemplos de su uso.
 
-     Un `puntero inteligente` es una clase que contiene y administra un puntero a través de una técnica popular de C++ llamada "La adquisición de recursos es inicialización" (RAII). Permite a los desarrolladores no preocuparse por liberar un puntero y también permite que los punteros sean seguros para excepciones [[10]](https://www.codecademy.com/resources/docs/cpp/smart-pointers).
+     Un `puntero inteligente` es una clase que contiene y administra un puntero a través de una técnica popular de C++ llamada "La adquisición de recursos es inicialización" (RAII). Permite a los desarrolladores no preocuparse por liberar un puntero y también permite que los punteros sean seguros para excepciones [[9]](https://www.codecademy.com/resources/docs/cpp/smart-pointers).
 
     Un ejemplo de uso, es cuando varios objetos necesitan compartir la propiedad del objeto Objeto y se quiere que la memoria se libere automáticamente cuando todos los objetos dejan de necesitarlo, una posible solución es usar std::shared_ptr. Este puntero inteligente realiza un seguimiento del número de referencias y libera la memoria solo cuando la última referencia se libera.
 
 15. ¿Cuál es la diferencia entre delete y delete[] en C++? ¿En qué contexto se utilizaría cada uno?
 
-    `delete` se utiliza para liberar la memoria ocupada por un objeto que ya no es necesario, mientras que `delete[]` se utilizaz para deshacerse del puntero de una matriz y liberar la memoria ocupada por la matriz [[11]](https://programmerbay.com/difference-between-delete-and-delete/).
+    `delete` se utiliza para liberar la memoria ocupada por un objeto que ya no es necesario, mientras que `delete[]` se utilizaz para deshacerse del puntero de una matriz y liberar la memoria ocupada por la matriz [[10]](https://programmerbay.com/difference-between-delete-and-delete/).
 
     Cuantos se tiene un único objeto es necesario utilizar `delete`, y cuando se tiene un arreglo de objetos lo mejor es emplear `delete[]`.
 
 16. ¿Qué es un algoritmo de ordenamiento y por qué son importantes en programación?
 
-    Los `algoritmos de ordenación` son procedimientos o conjuntos de instrucciones que se utilizan para organizar un conjunto de elementos en un orden específico [[12]](https://www.swhosting.com/es/comunidad/manual/algoritmos-de-ordenacion-con-ejemplos-en-c).
+    Los `algoritmos de ordenación` son procedimientos o conjuntos de instrucciones que se utilizan para organizar un conjunto de elementos en un orden específico [[11]](https://www.swhosting.com/es/comunidad/manual/algoritmos-de-ordenacion-con-ejemplos-en-c).
     
-    Estos algoritmos son ampliamente utilizados en ciencias de la computación y programación debido a su importancia para la eficiencia y optimización de procesos [[12]](https://www.swhosting.com/es/comunidad/manual/algoritmos-de-ordenacion-con-ejemplos-en-c).
+    Estos algoritmos son ampliamente utilizados en ciencias de la computación y programación debido a su importancia para la eficiencia y optimización de procesos [[11]](https://www.swhosting.com/es/comunidad/manual/algoritmos-de-ordenacion-con-ejemplos-en-c).
 
 17. Explique el funcionamiento del algoritmo de ordenamiento "Bubble Sort". ¿Cuál es su complejidad temporal en el peor caso?
 
-    `El bubble sort` o `Ordenamiento de Burbuja`, compara pares de elementos adyacentes y los intercambia si están en el orden incorrecto. Repite este proceso hasta que todos los elementos estén ordenados [[?]](https://www.swhosting.com/es/comunidad/manual/algoritmos-de-ordenacion-con-ejemplos-en-c). 
+    `El bubble sort` o `Ordenamiento de Burbuja`, compara pares de elementos adyacentes y los intercambia si están en el orden incorrecto. Repite este proceso hasta que todos los elementos estén ordenados [[12]](https://www.swhosting.com/es/comunidad/manual/algoritmos-de-ordenacion-con-ejemplos-en-c). 
 
      Su complejidad es O(n^2) en el peor de los casos, ya que tiene que comparar cada par de elementos en la lista.
 
 
 18. Describa el algoritmo de ordenamiento "QuickSort". ¿Cuál es su ventaja principal sobre otros algoritmos de ordenamiento?
 
-    `Quick Sort` o `Ordenamiento Rápido`, elige un elemento llamado "pivote" y divide el conjunto en dos subconjuntos, uno con elementos menores que el pivote y otro con elementos mayores. Luego, aplica el mismo proceso de forma recursiva en cada uno de los subconjuntos [[?]](https://www.swhosting.com/es/comunidad/manual/algoritmos-de-ordenacion-con-ejemplos-en-c).
+    `Quick Sort` o `Ordenamiento Rápido`, elige un elemento llamado "pivote" y divide el conjunto en dos subconjuntos, uno con elementos menores que el pivote y otro con elementos mayores. Luego, aplica el mismo proceso de forma recursiva en cada uno de los subconjuntos [[13]](https://www.swhosting.com/es/comunidad/manual/algoritmos-de-ordenacion-con-ejemplos-en-c).
 
     La ventaja principal de este algoritmo es que se basa en el principio de "dividir y vencer" lo que quiere decir que divide el problema en pequeños problemas y los va resolviendo hasta resolver el problema inicial.
 
 19. ¿Cuál es la diferencia entre un algoritmo de ordenamiento estable y uno inestable? Proporcione ejemplos de cada uno.
 
-    En un algoritmo estable, los errores implıcitos en los datos de entrada se mantienen en un nivel moderado a medida que se corre el algoritmo; mientras que si es inestable los errores irán aumentando a medida que se computa el algoritmo [[?]](https://repositorio.unican.es/xmlui/bitstream/handle/10902/26245/AlvarezNavarroAriadna-TFG-Matematicas.pdf?sequence=1#:~:text=En%20un%20algoritmo%20estable%2C%20los,que%20se%20computa%20el%20algoritmo.).
+    En un algoritmo estable, los errores implıcitos en los datos de entrada se mantienen en un nivel moderado a medida que se corre el algoritmo; mientras que si es inestable los errores irán aumentando a medida que se computa el algoritmo [[14]](https://repositorio.unican.es/xmlui/bitstream/handle/10902/26245/AlvarezNavarroAriadna-TFG-Matematicas.pdf?sequence=1#:~:text=En%20un%20algoritmo%20estable%2C%20los,que%20se%20computa%20el%20algoritmo.).
 
 20. Hable sobre el algoritmo de ordenamiento "Merge Sort". ¿Cuál es su complejidad temporal y en qué situaciones es preferible su uso?
 
-    `Merge Sort` o `Ordenamiento por Mezcla`, divide el conjunto de elementos en subconjuntos más pequeños, los ordena por separado y luego los fusiona para obtener un conjunto ordenado más grande. Este algoritmo utiliza una estrategia de divide y vencerás [[?]](https://www.swhosting.com/es/comunidad/manual/algoritmos-de-ordenacion-con-ejemplos-en-c).
+    `Merge Sort` o `Ordenamiento por Mezcla`, divide el conjunto de elementos en subconjuntos más pequeños, los ordena por separado y luego los fusiona para obtener un conjunto ordenado más grande. Este algoritmo utiliza una estrategia de divide y vencerás [[15]](https://www.swhosting.com/es/comunidad/manual/algoritmos-de-ordenacion-con-ejemplos-en-c).
 
     La complejidad temporal de Merge Sort es O(n log n) en todos los casos, ya sea en el peor, mejor o caso promedio.
 
