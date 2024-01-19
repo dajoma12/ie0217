@@ -35,8 +35,16 @@ int main() {
     std::cout << "Contactos en la agenda " << std::endl;
     agenda.mostrarContactos();
 
-    std::cout << "Buscar contacto en la agenda " std::endl;
-    agenda.buscarContactos("Juanito Mora");
 
+    std::string patron =  "Juan";
+    // llamada a la funcion
+    std::list<Contacto<std::string>> resultados = agenda.buscarContactos(patron);
+    // Muestra los resultados
+    std::cout << "\nContactos que coinciden '" << patron << "':" << std::endl;
+    for (const auto& contacto : resultados) {
+        std::cout << "Nombre: " << contacto.getNombre() << std::endl;
+        std::cout << "Telefono: " << contacto.getTelefono() << std::endl;
+        std::cout << "Email: " << contacto.getEmail() << std::endl;
+    }
     return 0;
 }
