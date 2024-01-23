@@ -10,7 +10,9 @@ class OperacionesBasicas {
 public:
     // Matriz<T> operator+(const Matriz<T>& matriz2) const;
     OperacionesBasicas(const Matriz<T>& matriz1, const Matriz<T>& matriz2);
-    Matriz<T> sumarMatrices() const;
+    void sumarMatrices() const;
+    void restarMatrices() const;
+
     
 private:
     Matriz<T> matriz1, matriz2;

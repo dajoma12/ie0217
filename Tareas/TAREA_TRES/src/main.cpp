@@ -1,25 +1,32 @@
 #include <iostream>
 #include "Matriz.hpp"
 #include "OperacionesBasicas.hpp"
+#include <complex>
 using namespace std;
 
 int main() {
-    Matriz<int> matriz1;
+    Matriz<complex<double>> matriz1;
+    matriz1.banderaComplejos(false);
     matriz1.solicitarDatos();
     matriz1.imprimir();
 
     std::cout << "\n--- Segunda Matriz ---" << std::endl;
-    Matriz<int> matriz2;
+    Matriz<complex<double>> matriz2;
+    matriz2.banderaComplejos(false);
     matriz2.solicitarDatos();
     matriz2.imprimir();
 
     std::cout <<"\n--- probando operaciones basicas ---" << std::endl;
-    OperacionesBasicas<int> operaciones(matriz1, matriz2);
-    Matriz<int> resultado = operaciones.sumarMatrices();
+    OperacionesBasicas<complex<double>> operaciones(matriz1, matriz2);
+    operaciones.sumarMatrices();
+    // Matriz<int> resta = operaciones.restarMatrices();
 
-    // Imprimir la matriz resultante
-    std::cout << "\n--- Matriz Resultante ---" << std::endl;
-    resultado.imprimir();
+    // // Imprimir la matriz resultante
+    // std::cout << "\n--- Matriz suma ---" << std::endl;
+    // suma.imprimir();
+
+    // std::cout << "\n--- Matriz resta ---" << std::endl;
+    // resta.imprimir();
 
     return 0;
 }

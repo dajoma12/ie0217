@@ -21,9 +21,8 @@ bool OperacionesBasicas<T>::validarMatriz() {
     }
 }
 
-
 template <typename T>
-Matriz<T> OperacionesBasicas<T>::sumarMatrices() const {
+void OperacionesBasicas<T>::sumarMatrices() const {
     Matriz<T> resultado;
     resultado.filas = matriz1.filas;
     resultado.columnas = matriz2.columnas;
@@ -37,26 +36,23 @@ Matriz<T> OperacionesBasicas<T>::sumarMatrices() const {
             resultado.matriz[i][j] = matriz1.matriz[i][j] + matriz2.matriz[i][j];
         }
     }
-    return resultado;
+    resultado.imprimir();
 }
 
+template <typename T>
+void OperacionesBasicas<T>::restarMatrices() const {
+    Matriz<T> resultado;
+    resultado.filas = matriz1.filas;
+    resultado.columnas = matriz2.columnas;
 
+    // Inicializar la matriz resultante con las dimensiones correctas
+    resultado.matriz.resize(resultado.filas, std::vector<T>(resultado.columnas));
 
-// template<typename T>
-// Matriz<T> OperacionesBasicas<T>::operator-(const Matriz<T>& matriz1, const Matriz<T>& matriz2) {
-//     Matriz<T> resultado;
-//     resultado.filas = matriz1.filas;
-//     resultado.columnas = matriz1.columnas;
-
-//     // Inicializar la matriz resultante con las dimensiones correctas
-//     resultado.matriz.resize(matriz1.filas, std::vector<T>(matriz1.columnas));
-
-//     // Restar los elementos correspondientes de ambas matrices
-//     for (int i = 0; i < matriz1.filas; ++i) {
-//         for (int j = 0; j < matriz1.columnas; ++j) {
-//             resultado.matriz[i][j] = matriz1.matriz[i][j] - matriz2.matriz[i][j];
-//         }
-//     }
-
-//     return resultado;
-// }
+    // Sumar los elementos correspondientes de ambas matrices
+    for (int i = 0; i < resultado.filas; ++i) {
+        for (int j = 0; j < resultado.columnas; ++j) {
+            resultado.matriz[i][j] = matriz1.matriz[i][j] - matriz2.matriz[i][j];
+        }
+    }
+    resultado.imprimir();
+}

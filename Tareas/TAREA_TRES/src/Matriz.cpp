@@ -1,11 +1,15 @@
 #include "Matriz.hpp"
 #include <stdexcept>
-#include <typeinfo>
+#include <complex>
 
 template <typename T>
 void Matriz<T>::solicitarDatos() {
     solicitarDimensiones();
-    agregarElementos();
+    if (complejos) {
+        agregarElementos();
+    } else {
+        agregarElementosComplejos();
+    }
 }
 
 
@@ -41,6 +45,7 @@ void Matriz<T>::solicitarDimensiones() {
     matriz.resize(filas, std::vector<T>(columnas, 0));
 }
 
+
 template <typename T>
 void Matriz<T>::agregarElementos() {
     for (int i = 0; i < filas; ++i) {
@@ -52,6 +57,44 @@ void Matriz<T>::agregarElementos() {
         }
     }
 }
+
+template <typename T>
+void Matriz<T>::banderaComplejos(bool complex) {
+    this->complejos = complex;
+}
+
+template <typename T>
+void Matriz<T>::agregarElementosComplejos() {
+    for (int i = 0; i < filas; ++i) {
+        for (int k = 0; k < columnas; ++k) {
+            std::cout << "Ingrese la parte real del elemento (" << i << ", " << k << "): ";
+            typename T::value_type realPart;
+            std::cin >> realPart;
+            
+            std::cout << "Ingrese la parte imaginaria del elemento (" << i << ", " << k << "): ";
+            typename T::value_type imagPart;
+            std::cin >> imagPart;
+
+            matriz[i][k] = T(realPart, imagPart);
+        }
+    }
+}
+// template <typename T>
+// void Matriz<T>::agregarElementosComplejos() {
+//     for (int i = 0; i < filas; ++i) {
+//         for (int k = 0; k < columnas; ++k) {
+//             std::cout << "Ingrese la parte real del elemento (" << i << ", " << k << "): ";
+//             typename T::value_type realPart;
+//             std::cin >> realPart;
+            
+//             std::cout << "Ingrese la parte imaginaria del elemento (" << i << ", " << k << "): ";
+//             typename T::value_type imagPart;
+//             std::cin >> imagPart;
+
+//             matriz[i][k] = T(realPart, imagPart);
+//         }
+//     }
+// }
 
 
 template <typename T>
