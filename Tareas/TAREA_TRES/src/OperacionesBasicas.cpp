@@ -1,24 +1,41 @@
+/**
+ * @file Matriz.hpp
+ * @author David Madrigal Miranda
+ * @version 0.1
+ * @date 2024-01-16
+ * @copyright Copyright (c) 2024
+ * @brief Archivo que contiene la especificaciones de las funciones de la clase Matriz.
+ */
 #include "OperacionesBasicas.hpp"
 
+/**
+ * @brief Constructor de la clase OperacionesBasicas.
+ * @details Inicializa la clase con dos matrices proporcionadas.
+ * @param matriz1 Primera matriz para operaciones.
+ * @param matriz2 Segunda matriz para operaciones.
+ * @tparam T Tipo de elementos de las matrices.
+ */
 template <typename T>
 OperacionesBasicas<T>::OperacionesBasicas(const Matriz<T>& matriz1, const Matriz<T>& matriz2)
 : matriz1(matriz1), matriz2(matriz2) {}
 
-
+/**
+ * @brief Valida si las dimensiones de las matrices son adecuadas para la operación.
+ * @return true si las dimensiones son adecuadas, false en caso contrario.
+ * @tparam T Tipo de elementos de las matrices.
+ */
 template <typename T>
 bool OperacionesBasicas<T>::validarMatriz() const{
-    int size1 = matriz1.filas * matriz1.columnas;
-    int size2 = matriz2.filas * matriz2.columnas;
-
-    if (size1 == size2) {
-        return true;
-    }
-
-    else{
-        return false;
-    }
+// Verificar si las dimensiones de las matrices son adecuadas para la operación
+    return (matriz1.filas == matriz2.filas) && (matriz1.columnas == matriz2.columnas);
 }
 
+/**
+ * @brief Realiza la suma de dos matrices.
+ * @details Si las dimensiones de las matrices son adecuadas, realiza la suma y muestra el resultado.
+ *          En caso contrario, muestra un mensaje de error.
+ * @tparam T Tipo de elementos de las matrices.
+ */
 template <typename T>
 void OperacionesBasicas<T>::sumarMatrices() const {
     Matriz<T> resultado;
@@ -47,6 +64,12 @@ void OperacionesBasicas<T>::sumarMatrices() const {
     }
 }
 
+/**
+ * @brief Realiza la resta de dos matrices.
+ * @details Si las dimensiones de las matrices son adecuadas, realiza la resta y muestra el resultado.
+ *          En caso contrario, muestra un mensaje de error.
+ * @tparam T Tipo de elementos de las matrices.
+ */
 template <typename T>
 void OperacionesBasicas<T>::restarMatrices() const {
     Matriz<T> resultado;
@@ -75,6 +98,12 @@ void OperacionesBasicas<T>::restarMatrices() const {
     }
 }
 
+/**
+ * @brief Realiza la multiplicacion de dos matrices.
+ * @details Si las dimensiones de las matrices son adecuadas, realiza la multiplicacion y muestra el resultado.
+ *          En caso contrario, muestra un mensaje de error.
+ * @tparam T Tipo de elementos de las matrices.
+ */
 template <typename T>
 void OperacionesBasicas<T>::multiplicarMatrices() const {
     try {
