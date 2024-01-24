@@ -2,6 +2,31 @@
 ### IE0217 - Estructuras Abstractas de Datos y Algoritmos para Ingeniería
 ### Tarea 2
 
+## Instrucciones de ejecucción
+
+Para poder ejecutar este código se debe estar ubicado dentro de la carpeta `src` y ejecutar lo siguiente en la terminal para crear el ejecutable.
+
+    g++ -o tarea3.exe ./main.cpp
+
+Una vez creado el ejecuta, basta con correrlo dentro de la carpeta.
+
+    .\tarea3.exe
+
+Otra de las posible formas de ejecutarlo es haciendo uso del Makefila, para ello debe estar ubicado dentro de la carpeta `TAREA_TRES`, carpeta en donde se encuentra el archivo Makefile, y ejecutar el siguiente comando en la terminal:
+
+    Mingw32-make -f Makefile
+
+Esto formará el archivo ejecutable, ya luego si desea ejecutarlo puede realizar el siguiente comando:
+
+     Mingw32-make -f run
+
+Finalmente, si desea borrar los archivos creados, solo basta con hacer un:
+
+     Mingw32-make -f clean
+
+Nota: Todos estos comandos deben ser siempre ejecutados desde la carpeta `TAREA_DOS` de lo contrario no servirán.
+
+
 ## Parte Teórica
 
 ### Templates:
@@ -36,6 +61,21 @@
     En el ejemplo anterior, se hace uso de templates para que con una misma función se pueda realizar una operación que normalmente requeriría sobrecarga.
 
 - **2. Sobrecarga de Plantillas:** ¿Cómo se realiza la sobrecarga de funciones con plantillas en C++?
+
+    La sobrecarga de plantillas permite que una función sea más genérica y aplicable a una variedad de tipos, proporcionando flexibilidad y reutilización de código. La forma de realizar esto es declarando la plantilla de función con la palabra clave `template` y los corchetes `<` y `>`. Seguido de la defincion de la funcion con el tipo genérico `T` para finalmente hacer el llamado a la función tipo deseado. Un ejemplo de lo anterior es lo siguiente:
+
+        template <typename T>
+        T sumar(T a, T b) {
+            return a + b;
+        }
+
+        int main() {
+            int resultadoEntero = sumar(5, 10);
+            double resultadoDouble = sumar(3.5, 2.7);
+
+            // Aquí, el compilador generará dos versiones de la función sumar, una para enteros y otra para doubles.
+            // Los resultados serán 15 para resultadoEntero y 6.2 para resultadoDouble.
+        }
 
 
 
@@ -225,13 +265,47 @@
 
 - **11. Algoritmos Personalizados:** ¿Cómo podría utilizar un algoritmo personalizado con la STL?
 
-
+    Para utilizar un algoritmo personalizado con la STL (Standard Template Library) en C++, primero es necesario definir un propio predicado (una función o functor que devuelve un valor booleano) y luego usarlo con algoritmos como std::for_each, std::transform, std::remove_if, entre otros.
 
 ### Expresiones Regulares:
 - **12. Definición de Expresiones Regulares:** Defina qué son las expresiones regulares y proporcione un ejemplo simple.
 
+    Las expresiones regulares, también llamadas regex o regexp, son patrones empleados para buscar y modificar cadenas de texto de manera más versátil y eficiente. Estos patrones posibilitan la búsqueda de secuencias específicas dentro de un texto, la validación de cadenas, la realización de sustituciones y diversas operaciones adicionales.
+
+    Un ejemplo cotidiano del uso de expresiones regulares sería la validación de un número de teléfono. Es posible utilizar expresiones para asegurarse de que el numero tiene el formato correcto
+
+
 - **13. Caracteres Especiales:** Enumere al menos tres caracteres especiales comúnmente utilizados en expresiones regulares y describa sus funciones.
+
+
+    `Punto (.):` El punto se corresponde con cualquier carácter, a excepción de un salto de línea. Por ejemplo, al utilizar la expresión regular "ca.", se logrará una coincidencia con palabras como "cat", "car", "cap", entre otras.
+
+    `Asterisco ():` El asterisco indica cero o más repeticiones del elemento previo. Por ejemplo, la expresión regular "cat" coincidirá con secuencias como "ct", "cat", "caat", "caa...t", y así sucesivamente.
+
+    `Más (+):` El símbolo de más representa al menos una repetición del elemento anterior.
 
 - **14. Uso de Expresiones Regulares en C++:** ¿Cómo se utilizan las expresiones regulares en C++? Proporciona un ejemplo.
 
-- **15. Validación de Patrones:** ¿Por queé las expresiones regulares son útiles para la validación de patrones en cadenas de texto?
+    En C++, normalmente se trabaja con la biblioteca `regex` para trabajar con expresiones regulares, dado que proporciona una clase que representa expresiones regulares , que son una especie de minilenguaje utilizado para realizar coincidencias de patrones dentro de cadenas [[]](https://en.cppreference.com/w/cpp/regex).
+
+    Un ejemplo es lo siguiente:
+
+        #include <iostream>
+        #include <regex>
+        #include <string>
+
+        int main()
+        {
+        const std::regex patron("(0+1+0+)");
+        const std::string palabra1("00010");
+        const std::string palabra2("abc00010def011110ghi");
+
+        // ¿Coincide la palabra con el patrón?
+        std::cout << std::boolalpha << std::regex_match(palabra1, patron) << std::endl;
+        std::cout << std::boolalpha << std::regex_match(palabra2, patron) << std::endl;
+        
+        return 0;
+        }
+- **15. Validación de Patrones:** ¿Por qué las expresiones regulares son útiles para la validación de patrones en cadenas de texto?
+
+    Son útiles por su flexibilidad en la busqueda de patrones, eficiencia y rapidez y por su reutilización de patrones.
