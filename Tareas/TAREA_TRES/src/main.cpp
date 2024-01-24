@@ -5,28 +5,23 @@
 using namespace std;
 
 int main() {
-    Matriz<complex<double>> matriz1;
-    matriz1.banderaComplejos(false);
-    matriz1.solicitarDatos();
-    matriz1.imprimir();
+    // Crear instancias de la clase Matriz<int>
+    Matriz<int> matriz1;  // Crear una instancia de Matriz<int>
+    Matriz<int> matriz2;  // Crear otra instancia de Matriz<int>
 
-    std::cout << "\n--- Segunda Matriz ---" << std::endl;
-    Matriz<complex<double>> matriz2;
-    matriz2.banderaComplejos(false);
-    matriz2.solicitarDatos();
-    matriz2.imprimir();
+    matriz1.solicitarDatos();  // Llamar a la función miembro de la instancia matriz1
+    matriz1.imprimir();        // Llamar a la función miembro de la instancia matriz1
 
-    std::cout <<"\n--- probando operaciones basicas ---" << std::endl;
-    OperacionesBasicas<complex<double>> operaciones(matriz1, matriz2);
+    matriz2.solicitarDatos();  // Llamar a la función miembro de la instancia matriz2
+    matriz2.imprimir();        // Llamar a la función miembro de la instancia matriz2
+
+    // Operaciones
+    OperacionesBasicas<int> operaciones(matriz1, matriz2);
+    cout << "\n --- Probando operaciones basicas: suma ---" << endl;
     operaciones.sumarMatrices();
-    // Matriz<int> resta = operaciones.restarMatrices();
-
-    // // Imprimir la matriz resultante
-    // std::cout << "\n--- Matriz suma ---" << std::endl;
-    // suma.imprimir();
-
-    // std::cout << "\n--- Matriz resta ---" << std::endl;
-    // resta.imprimir();
-
+    cout << "\n --- Probando operaciones basicas: resta ---" << endl;
+    operaciones.restarMatrices();
+    cout << "\n --- Probando operaciones basicas: multipicacion ---" << endl;
+    operaciones.multiplicarMatrices();
     return 0;
 }

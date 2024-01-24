@@ -9,20 +9,19 @@ template<typename T>
 class Matriz {
 
 public:
+    Matriz(bool activarComplejos = false);
     void solicitarDatos();
     void imprimir() const;
-
     std::vector<std::vector<T>> matriz;
     int filas; /* filas de la matriz*/
     int columnas; /* columnas de la matriz*/
-    void solicitarDimensiones(); /* solicita el tamaño de la matriz*/
-    void banderaComplejos(bool complex); /* levanta una bandera para admitir complejos*/
-
     // friend class OperacionesBasicas<T>;
 private:
-    bool complejos = true;
+    bool complejos;
+    void solicitarDimensiones(); /* solicita el tamaño de la matriz*/
     void agregarElementos();
-    void agregarElementosComplejos();
+    // void agregarElementosComplejos();
+
 };
 
 #include "Matriz.cpp"

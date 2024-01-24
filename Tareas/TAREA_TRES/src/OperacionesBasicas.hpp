@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include "Matriz.hpp"
+#include <limits>
 
 template <typename T>
 class OperacionesBasicas {
@@ -12,11 +13,12 @@ public:
     OperacionesBasicas(const Matriz<T>& matriz1, const Matriz<T>& matriz2);
     void sumarMatrices() const;
     void restarMatrices() const;
+    void multiplicarMatrices() const;
 
     
 private:
     Matriz<T> matriz1, matriz2;
-    bool validarMatriz();
+    bool validarMatriz() const;
 };
 
 
