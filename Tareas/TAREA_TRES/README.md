@@ -4,9 +4,10 @@
 
 ## Instrucciones de ejecucción
 
-Para poder ejecutar este código se debe estar ubicado dentro de la carpeta `src` y ejecutar lo siguiente en la terminal para crear el ejecutable.
+### Primera parte
+Para poder ejecutar la `primera parte` este código, se debe estar ubicado dentro de la carpeta `src` y ejecutar lo siguiente en la terminal para crear el ejecutable.
 
-    g++ -o tarea3.exe ./main.cpp
+    g++ -o tarea3.exe .\main.cpp
 
 Una vez creado el ejecuta, basta con correrlo dentro de la carpeta.
 
@@ -24,7 +25,16 @@ Finalmente, si desea borrar los archivos creados, solo basta con hacer un:
 
      Mingw32-make -f clean
 
-Nota: Todos estos comandos deben ser siempre ejecutados desde la carpeta `TAREA_DOS` de lo contrario no servirán.
+Nota: Todos estos comandos deben ser siempre ejecutados desde la carpeta `TAREA_TRES` de lo contrario no servirán.
+
+### Segunda parte
+Para la `segunda parte`, por favor ingrese a la carpeta `.\src2` y ejecute desde su terminal lo siguiente:
+
+    g++ -o regulares.exe .\main.cpp
+
+Esto le genera un archivo ejecutable que luego bastaría con hacer lo siguiente para que se ejecute:
+
+    .\regulares.exe
 
 
 ## Parte Teórica

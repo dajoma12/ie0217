@@ -4,6 +4,11 @@
 #include <complex>
 using namespace std;
 
+/*
+    --- En caso de querer otro tipo, basta con cambiar <complex<double>>
+    a int o float --
+*/
+
 int main() {
     // Crear instancias de la clase Matriz<int>
     Matriz<complex<double>> matriz1;  // Crear una instancia de Matriz<int>
