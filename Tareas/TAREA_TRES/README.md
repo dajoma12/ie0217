@@ -205,7 +205,7 @@ Esto le genera un archivo ejecutable que luego bastaría con hacer lo siguiente 
 
 - **10. Algoritmos STL:** Proporcione ejemplos de al menos tres algoritmos de la STL y describa sus funciones básicas.
 
-    Para el primer ejemplo, se utiliza `std::sort` que 
+    Para el primer ejemplo, se utiliza `std::sort` que ordena los elementos del rango (first,last)en orden ascendente [[3]](https://cplusplus.com/reference/algorithm/sort/)
         
         #include <iostream>
         #include <vector>
@@ -225,7 +225,7 @@ Esto le genera un archivo ejecutable que luego bastaría con hacer lo siguiente 
             return 0;
         }
 
-    Segundo ejemplo,
+    Segundo ejemplo, se utiliza `std::find`que busca la primera aparación dentro de un rango establecido.
 
         #include <iostream>
         #include <vector>
@@ -252,7 +252,7 @@ Esto le genera un archivo ejecutable que luego bastaría con hacer lo siguiente 
             return 0;
         }
 
-    Para el tercer ejemplo,
+    Para el tercer ejemplo, se utiliza `std::accumulate`Devuelve el resultado de acumular todos los valores en el rango (first,last) [[4]](https://cplusplus.com/reference/numeric/accumulate/).
 
         #include <iostream>
         #include <vector>
@@ -296,7 +296,7 @@ Esto le genera un archivo ejecutable que luego bastaría con hacer lo siguiente 
 
 - **14. Uso de Expresiones Regulares en C++:** ¿Cómo se utilizan las expresiones regulares en C++? Proporciona un ejemplo.
 
-    En C++, normalmente se trabaja con la biblioteca `regex` para trabajar con expresiones regulares, dado que proporciona una clase que representa expresiones regulares , que son una especie de minilenguaje utilizado para realizar coincidencias de patrones dentro de cadenas [[3]](https://en.cppreference.com/w/cpp/regex).
+    En C++, normalmente se trabaja con la biblioteca `regex` para trabajar con expresiones regulares, dado que proporciona una clase que representa expresiones regulares , que son una especie de minilenguaje utilizado para realizar coincidencias de patrones dentro de cadenas [[5]](https://en.cppreference.com/w/cpp/regex).
 
     Un ejemplo es lo siguiente:
 
