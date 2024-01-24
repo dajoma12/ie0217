@@ -286,7 +286,7 @@ Nota: Todos estos comandos deben ser siempre ejecutados desde la carpeta `TAREA_
 
 - **14. Uso de Expresiones Regulares en C++:** ¿Cómo se utilizan las expresiones regulares en C++? Proporciona un ejemplo.
 
-    En C++, normalmente se trabaja con la biblioteca `regex` para trabajar con expresiones regulares, dado que proporciona una clase que representa expresiones regulares , que son una especie de minilenguaje utilizado para realizar coincidencias de patrones dentro de cadenas [[]](https://en.cppreference.com/w/cpp/regex).
+    En C++, normalmente se trabaja con la biblioteca `regex` para trabajar con expresiones regulares, dado que proporciona una clase que representa expresiones regulares , que son una especie de minilenguaje utilizado para realizar coincidencias de patrones dentro de cadenas [[3]](https://en.cppreference.com/w/cpp/regex).
 
     Un ejemplo es lo siguiente:
 
