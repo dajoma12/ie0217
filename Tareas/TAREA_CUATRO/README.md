@@ -24,6 +24,62 @@
 
 5. ¿Cómo se gestionan las excepciones en Python? Proporcione ejemplos de uso de bloques try, except y finally.
 
+    En Python, las excepciones se gestionan utilizando bloques try, except y finally. 
+    
+    La gestión usual con try y except es la siguiente[[3]](https://docs.python.org/es/3/tutorial/errors.html):
+
+    1. Se ejecuta la cláusula try.
+    2. Si no hay excepciones, se omite la cláusula except, y la ejecución continúa después del bloque try.
+    4. Si ocurre una excepción durante la ejecución de la cláusula try, se omite el resto de la cláusula. Si el tipo de la excepción coincide con el especificado en la cláusula except, se ejecuta esa cláusula.
+    4. Si la excepción no coincide con el tipo especificado, se busca un manejador de excepciones en bloques try externos. Si no se encuentra ninguno, es una excepción no manejada y la ejecución se detiene con un mensaje de error.
+
+    Ejemplo de lo anterior es lo siguiente:
+        
+        class B(Exception):
+            pass
+
+        class C(B):
+            pass
+
+        class D(C):
+            pass
+
+        for cls in [B, C, D]:
+            try:
+                raise cls()
+            except D:
+                print("D")
+            except C:
+                print("C")
+            except B:
+                print("B")
+
+    Con respecto a `finally`, funciona de la siguiente forma [[3]](https://docs.python.org/es/3/tutorial/errors.html):
+
+    1. Si ocurre una excepción en la cláusula try, puede ser manejada por una cláusula except.
+    
+    2. Si no es manejada, la excepción se relanza después de ejecutar el bloque finally.
+    
+    3. Las excepciones en cláusulas except o else también se relanzan después de ejecutar el bloque finally.
+    
+    4. Si la cláusula finally contiene break, continue, o return, las excepciones no se relanzan.
+    
+    5. Si hay una sentencia break, continue, o return en el bloque try, la cláusula finally se ejecuta justo antes de dicha sentencia.
+    
+    6. Si la cláusula finally tiene una sentencia return, el valor retornado será el de la cláusula finally, no el de la sentencia return en la cláusula try.
+
+    Ejemplo de lo anterior, es lo siguiente:
+
+        def divide(x, y):
+        try:
+            result = x / y
+        except ZeroDivisionError:
+            print("division by zero!")
+        else:
+            print("result is", result)
+        finally:
+            print("executing finally clause")
+
 6. ¿Qué son los generadores en Python y para qué se utilizan?
 
     Los Python generators son funciones especiales que devuelven un iterator en Python. La forma de crear Python generators es similar a la definición de una función normal. La diferencia está en los detalles: en lugar de una sentencia return, los generadores tienen una sentencia yield. [[4]](https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/python-generator/)
@@ -49,8 +105,6 @@
     Los métodos de clase se declaran dentro de la clase, se les pone el decorador @classmethod, y se les pasa la palabra cls, por convención, como referencia de la clase. Mientras que los métodos estáticos se declaran como funciones normales, pero se decoran con @staticmethod y no reciben referencia ni de la clase ni de la instancia. [[7]](https://platzi.com/tutoriales/1104-python-2019/5347-la-relacion-que-hay-entre-self-y-cls-con-metodos-estaticos-metodos-de-clase-y-metodos-de-instancia/#:~:text=los%20m%C3%A9todos%20de%20clase%20se,clase%20ni%20de%20la%20instancia)
 
     Cabe destacar que, aunque los métodos de clase pueden ser llamados mediante una instancia de la clase, también pueden ser llamados directamente con la clase. Por otro lado, los métodos estáticos se pueden llamar directamente con la clase, sin necesidad de instanciarla.
-
-los métodos estáticas se declaran como una función normal pero se decoran con @staticmethod y no reciben referencia ni de la clase ni de la instancia
 
 11. Hable sobre las diferencias entre herencia simple y herencia múltiple en Python.
 
