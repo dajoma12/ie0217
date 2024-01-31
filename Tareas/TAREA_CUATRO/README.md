@@ -3,6 +3,22 @@
 ### Tarea 2
 
 ## Instrucciones de ejecucción
+Para poder ejecutar este código se debe estar ubicado dentro de la carpeta `.\src` y ejecutar lo siguiente en la terminal:
+
+    py InterfazUsuario.py
+
+Otra de las posible formas de ejecutarlo es haciendo uso del Makefile, para ello debe estar ubicado dentro de la carpeta `TAREA_CUATRO`, carpeta en donde se encuentra el archivo Makefile, y ejecutar el siguiente comando en la terminal:
+
+    make
+
+Esto compilara completamente el programa sin necesidad de buscar los ejecutables. También dispone de la opción de `make clean` para borrar todos archivos `__pycache__`
+
+
+Nota: Los comandos del `Makefile` deben ser siempre ejecutados desde la carpeta `TAREA_CUATRO` de lo contrario no servirán.
+
+### Breve introducción al programa
+
+Una vez ejecutado el programa correctamente, en la terminal dispondra de un menú de opciones que hace uso de todas las clases solicitadas. La primera opción, utiliza `EvaluaciónEspecifica` y `Alergias`, para obtener las alergías del usuario con base en su puntuación. La segunda opción, usa `EvaluacionGeneral` y `TiposAlergias` para puntuar las alergias que ingresa el usuario. La tercera opción, utiliza la clase `Alergias` para añadir al "sistema" una nueva alergía válida. La última opción, finaliza la ejecución.
 
 ## Parte teórica
 
@@ -127,3 +143,16 @@
     La sobreescritura de Métodos (override) en Python se refiere a la posibilidad de que una subclase cuente con métodos con el mismo nombre que los de una clase superior pero que definen comportamientos diferentes [[11]](https://www.programadornovato.com/sobreescritura-de-metodos-override-en-python/).
 
     La forma de realizarlo es sencillamente hacer lo que comúnmente se le dice 'caerle encima', que implica crear una clase con las mismas definiciones pero con resultados diferentes.
+
+
+## Parte Práctica 2
+
+`Timeit` es un modulo de la biblioteca standar de python que provee de varias funciones para la medición de tiempos de ejecución de pequeñas porciones de código [[12]](https://www.einblick.ai/python-code-examples/python-timeit/#:~:text=Timeit%20is%20a%20module%20in,and%20help%20understand%20performance%20tradeoffs.).
+
+Para determinar los tiempos de ejecución se realizarón pruebas disminuyendo la cantidad de alergías que había en la clase `Alergias`.
+
+La primera prueba se realizó en la clase `EvaluacionEspecifica`, en la cuál se puede observar una decancia considerable en los tiempos de ejecución, dado que con 50 datos se tenían unos tiempos promedios 0.0139s y reduciendo la cantidad a 11 se obtuvo un promedio 0.0045s, lo cuál indica que los tiempos están creciendo significativamente.
+
+La segunda prueba se realizón en la clase `EvaluacionGeneral`, en esta prueba los tiempos de ejecución eran menores, debido a que en esta caso era menor la busqueda en alergías. Para una cantidad de 11 datos de alergías se tuvo un tiempo promedio de 0.000459s mientras que para una cantidad de 50 datos se tuvo un tiempo promedio de 0.000811, lo que indica que los tiempos de ejecución también aumentaron significativamente.
+
+En conclusión, conforme aumenta el volumen de datos, los tiempos crecen considerablemente, a pesar de estar tratando con cantidades de datos relativamente pequeñas, como las que van desde 11 hasta 50. Por lo tanto, se debe tener cuidado al trabajar con Python. Por último, con respecto a las mejorías, se podría trabajar más los algoritmos de busqueda dado que estos son los principales causantes de los tiempos.

@@ -1,4 +1,5 @@
 from TiposAlegias import TiposAlergias
+import timeit
 
 
 class EvaluacionGeneral:
@@ -15,7 +16,7 @@ class EvaluacionGeneral:
         @param listaEvaluada: Lista de alergias a evaluar.
         @param listaSinNombre: Lista de alergias con valor pero sin nombre.
         @param listaSinValor: Lista de alergias con nombre pero sin valor.
-        """        
+        """
         self.listaEvaluada = listaEvaluada
         self.listaSinNombre = listaSinNombre
         self.listaSinValor = listaSinValor
@@ -45,9 +46,13 @@ class EvaluacionGeneral:
             print(alergia)
 
 
-if __name__ == '__main__':
+def evaluar_tiempo():
+    """
+    @brief Metodo utilizado para evaluar los tiempos de ejecucion
+            de la clase EvaluacionGeneral.
+    """
     # Crear instancias de TiposAlergias para simular diferentes situaciones
-    tipos_alergias = TiposAlergias("Huevos", 1)
+    tipos_alergias = TiposAlergias("Huevo", 1024)
     tipos_alergias.validarAlergia()
     tipos_alergias = TiposAlergias(None, 4)
     tipos_alergias.validarAlergia()
@@ -62,3 +67,9 @@ if __name__ == '__main__':
     evalua = EvaluacionGeneral(validas, sinNombre, sinValor)
     evalua.puntuacionGeneral()
     evalua.imprimirInformacion()
+
+
+if __name__ == '__main__':
+    tiempo_de_ejecucion = timeit.repeat(evaluar_tiempo, repeat=3, number=1)
+    # Imprimir el tiempo de ejecución
+    print("Tiempos de ejecución: {}".format(tiempo_de_ejecucion))
