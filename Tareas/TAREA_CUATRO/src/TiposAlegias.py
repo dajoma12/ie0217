@@ -2,15 +2,35 @@ from Alergias import Alergia
 
 
 class TiposAlergias:
+    """
+    @brief Clase para validar y clasificar alergias según nombre y valor.
+
+    Tiene atributos estáticos para almacenar alergias válidas,
+             nombres no encontrados
+    y valores no encontrados.
+    """
+
     alergiasValidas = []
     valorNoEncontrado = []
     nombreNoEncontrado = []
 
     def __init__(self, nombre, valor):
+        """
+        @brief Constructor de la clase TiposAlergias.
+
+        @param nombre: Nombre de la alergia a validar.
+        @param valor: Valor de la alergia a validar.
+        """
         self.nombre = nombre
         self.valor = valor
 
     def validarAlergia(self):
+        """
+        @brief Valida una alergia comparándola con las alergias existentes.
+
+        Clasifica la alergia como válida, nombre no encontrado o valor
+                 no encontrado.
+        """
         listaAlergias = Alergia.alergias
 
         encontrada = False  # Bandera para verificar si se encontró alguna

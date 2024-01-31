@@ -1,18 +1,39 @@
 class Alergia:
+    """
+    @brief Clase que representa una alergia con nombre y valor asociado.
+
+    La clase tiene métodos para imprimir la lista de alergias y
+    buscar una alergia específica por nombre.
+    """
     alergias = []  # Atributo estático
 
     def __init__(self, nombre='', valor=''):
+        """
+        @brief Constructor de la clase Alergia.
+
+        @param nombre: Nombre de la alergia.
+        @param valor: Valor asociado a la alergia.
+        """
         self.nombre = nombre
         self.valor = valor
         Alergia.alergias.append(self)
 
     @staticmethod  # Metodo estático
     def imprimir_alergias():
+        """
+        @brief Método estático para imprimir la lista de alergias.
+        """
         print("Lista de alergias:")
         for alergia in Alergia.alergias:
             print(f"Nombre: {alergia.nombre}, Valor: {alergia.valor}")
 
     def imprimir_alergia_especifica(self, nombre_alergia):
+        """
+        @brief Método para imprimir información de una alergia específica
+                 por nombre.
+
+        @param nombre_alergia: Nombre de la alergia a buscar e imprimir.
+        """
         for alergia in Alergia.alergias:
             if alergia.nombre == nombre_alergia:
                 print(f"Nombre: {alergia.nombre}, Valor: {alergia.valor}")
@@ -20,6 +41,7 @@ class Alergia:
         print(f"No se encontró la alergia con el nombre '{nombre_alergia}'.")
 
 
+# Crear instancias de la clase Alergia
 alergia1 = Alergia("Huevos", 1)
 alergia2 = Alergia("Cacahuetes", 2)
 alergia3 = Alergia("Mariscos", 4)
@@ -31,6 +53,7 @@ alergia8 = Alergia("Gatos", 128)
 alergia9 = Alergia("Sardinas", 256)
 alergia10 = Alergia("Gluten", 512)
 alergia11 = Alergia("Huevo", 1024)
+# ----------------------------------
 alergia12 = Alergia("Nueces", 2048)
 alergia13 = Alergia("Leche", 4096)
 alergia14 = Alergia("Soja", 8192)
