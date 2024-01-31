@@ -20,6 +20,13 @@ Nota: Los comandos del `Makefile` deben ser siempre ejecutados desde la carpeta 
 
 Una vez ejecutado el programa correctamente, en la terminal dispondra de un menú de opciones que hace uso de todas las clases solicitadas. La primera opción, utiliza `EvaluaciónEspecifica` y `Alergias`, para obtener las alergías del usuario con base en su puntuación. La segunda opción, usa `EvaluacionGeneral` y `TiposAlergias` para puntuar las alergias que ingresa el usuario. La tercera opción, utiliza la clase `Alergias` para añadir al "sistema" una nueva alergía válida. La última opción, finaliza la ejecución.
 
+#### Link del Netlify
+
+Para esta tarea se subió el trabajo creado a un dominio de uso público el cuál se puede consultar en el siguiente link:
+
+
+Para más información puede acceder al contenido de la carpeta `.\html`
+
 ## Parte teórica
 
 1. Explique la diferencia entre una lista y una tupla en Python.
