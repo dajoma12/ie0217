@@ -18,7 +18,7 @@ Nota: Los comandos del `Makefile` deben ser siempre ejecutados desde la carpeta 
 
 ### Breve introducción al programa
 
-Una vez ejecutado el programa correctamente, en la terminal dispondra de un menú de opciones que hace uso de todas las clases solicitadas. La primera opción, utiliza `EvaluaciónEspecifica` y `Alergias`, para obtener las alergías del usuario con base en su puntuación. La segunda opción, usa `EvaluacionGeneral` y `TiposAlergias` para puntuar las alergias que ingresa el usuario. La tercera opción, utiliza la clase `Alergias` para añadir al "sistema" una nueva alergía válida. La última opción, finaliza la ejecución.
+Una vez ejecutado el programa correctamente, en la terminal dispondra de un menú de opciones que hace uso de todas las clases solicitadas. La primera opción, utiliza `EvaluaciónEspecifica` y `Alergias`, para obtener las alergías del usuario con base en su puntuación. La segunda opción, usa `EvaluacionGeneral` y `TiposAlergias` para puntuar las alergias que ingresa el usuario. La tercera opción, utiliza la clase `Alergias` para añadir al "sistema" una nueva alergía válida o bien mediante esta opción se puede ver todas la lista de alergías disponibles. La última opción, finaliza la ejecución.
 
 #### Link del Netlify
 
