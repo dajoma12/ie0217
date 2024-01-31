@@ -24,8 +24,9 @@ Una vez ejecutado el programa correctamente, en la terminal dispondra de un men�
 
 Para esta tarea se subió el trabajo creado a un dominio de uso público el cuál se puede consultar en el siguiente link:
 
+    https://65ba64057e7101f0cffafa26--cool-mochi-528597.netlify.app/
 
-Para más información puede acceder al contenido de la carpeta `.\html`
+Para más información puede acceder al contenido de la carpeta `.\html`.
 
 ## Parte teórica
 
