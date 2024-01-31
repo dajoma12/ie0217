@@ -26,7 +26,10 @@ class EvaluacionEspecifica:
                 for k in range(len(self.lista)):
                     if (valor == self.lista[k].valor):
                         alergias.append(self.lista[k].nombre)
-        print(alergias)
+
+        print("\nEs alergico a:")
+        for alergia in alergias:
+            print(alergia)
 
 
 if __name__ == '__main__':

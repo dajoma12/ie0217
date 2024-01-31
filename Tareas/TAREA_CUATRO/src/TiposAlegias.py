@@ -29,8 +29,12 @@ class TiposAlergias:
 
 # Ejemplo de uso
 if __name__ == "__main__":
-    tipos_alergias = TiposAlergias("Huev", None)
+    tipos_alergias = TiposAlergias("Huevos", 1)
     tipos_alergias.validarAlergia()
 
+    # tipos_alergias = TiposAlergias("Col", None)
+    # tipos_alergias.validarAlergia()
+
+    print("Alergias:", tipos_alergias.alergiasValidas)
     print("Nombres no encontrados:", tipos_alergias.nombreNoEncontrado)
     print("Valores no encontrados:", tipos_alergias.valorNoEncontrado)
