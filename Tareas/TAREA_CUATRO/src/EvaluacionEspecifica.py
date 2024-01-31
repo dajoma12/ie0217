@@ -1,5 +1,6 @@
 from Alergias import Alergia
 import timeit
+import cProfile
 
 
 class EvaluacionEspecifica:
@@ -65,12 +66,15 @@ def evaluar_tiempo():
     alergia50 = Alergia()
     listaAlergias = alergia50.alergias
     alergia50.imprimir_alergias()
-    evaluar = EvaluacionEspecifica(7, listaAlergias)
+    evaluar = EvaluacionEspecifica(1000000, listaAlergias)
     evaluar.evaluar_puntuacion()
 
 
 if __name__ == '__main__':
-    tiempo_de_ejecucion = timeit.repeat(evaluar_tiempo, repeat=3, number=1)
+    # tiempo_de_ejecucion = timeit.repeat(evaluar_tiempo, repeat=3, number=1)
 
-    # Imprimir el tiempo de ejecución
-    print("Tiempos de ejecución: {}".format(tiempo_de_ejecucion))
+    # # Imprimir el tiempo de ejecución
+    # print("Tiempos de ejecución: {}".format(tiempo_de_ejecucion))
+
+    # Perfilar el método evaluar_puntuacion() usando cProfile
+    cProfile.run("evaluar_tiempo()")

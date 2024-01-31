@@ -1,5 +1,5 @@
 from TiposAlegias import TiposAlergias
-import timeit
+import timeit, cProfile
 
 
 class EvaluacionGeneral:
@@ -56,6 +56,13 @@ def evaluar_tiempo():
     tipos_alergias.validarAlergia()
     tipos_alergias = TiposAlergias(None, 4)
     tipos_alergias.validarAlergia()
+
+    tipos_alergias = TiposAlergias("Col", None)
+    tipos_alergias.validarAlergia()
+
+    tipos_alergias = TiposAlergias("Tomates", None)
+    tipos_alergias.validarAlergia()
+
     tipos_alergias = TiposAlergias(None, None)
 
     # Obtener listas de alergias validas, sin nombre y sin valor
@@ -70,6 +77,7 @@ def evaluar_tiempo():
 
 
 if __name__ == '__main__':
-    tiempo_de_ejecucion = timeit.repeat(evaluar_tiempo, repeat=3, number=1)
-    # Imprimir el tiempo de ejecución
-    print("Tiempos de ejecución: {}".format(tiempo_de_ejecucion))
+    # tiempo_de_ejecucion = timeit.repeat(evaluar_tiempo, repeat=3, number=1)
+    # # Imprimir el tiempo de ejecución
+    # print("Tiempos de ejecución: {}".format(tiempo_de_ejecucion))
+    cProfile.run("evaluar_tiempo()")
