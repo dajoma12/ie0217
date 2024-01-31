@@ -163,4 +163,38 @@ La primera prueba se realizó en la clase `EvaluacionEspecifica`, en la cuál se
 
 La segunda prueba se realizón en la clase `EvaluacionGeneral`, en esta prueba los tiempos de ejecución eran menores, debido a que en esta caso era menor la busqueda en alergías. Para una cantidad de 11 datos de alergías se tuvo un tiempo promedio de 0.000459s mientras que para una cantidad de 50 datos se tuvo un tiempo promedio de 0.000811, lo que indica que los tiempos de ejecución también aumentaron significativamente.
 
-En conclusión, conforme aumenta el volumen de datos, los tiempos crecen considerablemente, a pesar de estar tratando con cantidades de datos relativamente pequeñas, como las que van desde 11 hasta 50. Por lo tanto, se debe tener cuidado al trabajar con Python. Por último, con respecto a las mejorías, se podría trabajar más los algoritmos de busqueda dado que estos son los principales causantes de los tiempos.
+Para determinar cuál función consumía una mayor cantidad de recursos se utilizo `cProfile`, los resultados obtenidos fueron los siguientes:
+
+| ncalls | tottime | percall | cumtime | percall | filename:lineno(function)                       |
+|--------|---------|---------|---------|---------|------------------------------------------------|
+| 1      | 0.000   | 0.000   | 0.012   | 0.012   | <string>:1(<module>)                            |
+| 1      | 0.000   | 0.000   | 0.000   | 0.000   | Alergias.py:10(__init__)                         |
+| 1      | 0.000   | 0.000   | 0.011   | 0.011   | Alergias.py:21(imprimir_alergias)               |
+| 1      | 0.000   | 0.000   | 0.000   | 0.000   | EvaluacionEspecifica.py:15(__init__)           |
+| 1      | 0.000   | 0.000   | 0.002   | 0.002   | EvaluacionEspecifica.py:25(evaluar_puntuacion) |
+| 1      | 0.000   | 0.000   | 0.012   | 0.012   | EvaluacionEspecifica.py:61(evaluar_tiempo)     |
+| 1      | 0.000   | 0.000   | 0.012   | 0.012   | {built-in method builtins.exec}                 |
+| 8      | 0.000   | 0.000   | 0.000   | 0.000   | {built-in method builtins.len}                  |
+| 60     | 0.012   | 0.000   | 0.012   | 0.000   | {built-in method builtins.print}                |
+| 28     | 0.000   | 0.000   | 0.000   | 0.000   | {method 'append' of 'list' objects}            |
+| 1      | 0.000   | 0.000   | 0.000   | 0.000   | {method 'disable' of '_lsprof.Profiler' objects}|
+
+La anterior tabla es resultado de `EvaluacionEspecífica`, se puede observar que los métodos print están gastando mayor cantidad de tiempo dado que implican una impresión en consola. Por otro lado, la clase evaluación específica también esta consumiendo mucho recursos, posiblemente debido a que tiene que estar buscando dentro de las instancia con cada bandera levantada.
+
+| ncalls | tottime | percall | cumtime | percall | filename:lineno(function)               |
+|--------|---------|---------|---------|---------|----------------------------------------|
+|   1    |  0.000  |  0.000  |  0.000  |  0.000  | <string>:1(<module>)                   |
+|   1    |  0.000  |  0.000  |  0.000  |  0.000  | EvaluacionGeneral.py:12(__init__)      |
+|   1    |  0.000  |  0.000  |  0.000  |  0.000  | EvaluacionGeneral.py:25(puntuacionGeneral) |
+|   1    |  0.000  |  0.000  |  0.000  |  0.000  | EvaluacionGeneral.py:33(imprimirInformacion) |
+|   1    |  0.000  |  0.000  |  0.000  |  0.000  | EvaluacionGeneral.py:49(evaluar_tiempo)|
+|   5    |  0.000  |  0.000  |  0.000  |  0.000  | TiposAlegias.py:17(__init__)           |
+|   4    |  0.000  |  0.000  |  0.000  |  0.000  | TiposAlegias.py:27(validarAlergia)     |
+|   1    |  0.000  |  0.000  |  0.001  |  0.001  | {built-in method builtins.exec}        |
+|   3    |  0.000  |  0.000  |  0.000  |  0.000  | {built-in method builtins.print}       |
+|   4    |  0.000  |  0.000  |  0.000  |  0.000  | {method 'append' of 'list' objects}    |
+|   1    |  0.000  |  0.000  |  0.000  |  0.000  | {method 'disable' of '_lsprof.Profiler' objects} |
+
+La anterior tabla es el resultado de `EvaluaciónGeneral`, se puede observar, y como ya había quedado demostrado anteriormente, esta clase consume una menor cantidad de recursos que la clase `EvaluacionEspecifica` dado que no hace uso de tantos ciclos para determinar el resultado final.
+
+En conclusión, conforme aumenta el volumen de datos, los tiempos crecen considerablemente, a pesar de estar tratando con cantidades de datos relativamente pequeñas, como las que van desde 11 hasta 50. Por lo tanto, se debe tener cuidado al trabajar con volumenes grandes en Python. Y con respecto a las mejorías, se podría trabajar más los algoritmos de busqueda dado que estos son los principales causantes de los tiempos.
