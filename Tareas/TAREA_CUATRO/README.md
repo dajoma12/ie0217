@@ -136,7 +136,7 @@ Para más información puede acceder al contenido de la carpeta `.\html`.
 
 12. ¿Cómo se manejan los errores de importación de módulos en Python?
 
-    Cuando se importa un módulo por primera vez, Python busca el módulo y, si se encuentra, crea un objeto de módulo, inicializándolo. Si no se encuentra el módulo con nombre, se genera un `ModuleNotFoundError` [[9]](https://docs.python.org/es/3/reference/import.html). Por tanto, bastaría con utilizar `try` y `except` para solventar estos probblemas de importación.
+    Cuando se importa un módulo por primera vez, Python busca el módulo y, si se encuentra, crea un objeto de módulo, inicializándolo. Si no se encuentra el módulo con nombre, se genera un `ModuleNotFoundError` [[9]](https://docs.python.org/es/3/reference/import.html). Por tanto, bastaría con utilizar `try` y `except` para solventar estos problemas de importación.
 
 13. ¿Cuál es la diferencia entre una clase y un objeto en Python?
 
@@ -144,13 +144,13 @@ Para más información puede acceder al contenido de la carpeta `.\html`.
 
 14. Hable sobre la diferencia entre una clase abstracta y una interfaz en Python.
 
-    Las clases abstractas no pueden ser instanciadas y se utilizan como clases destinadas a ser solo padres de clases hijas. En cambio, una interfaz es un contrato que define un conjunto de métodos o acciones que una clase debe proporcionar. En resumen, las clases hijas están obligadas a definir los métodos y atributos declarados por la clase padre [[10]](https://atareao.es/pyldora/clases-abstractas-interfaces-y-polimorfismo/).
+    Las clases abstractas no pueden ser instanciadas y se utilizan como clases destinadas a ser solo padres de clases hijas. En cambio, una interfaz es un contrato que define un conjunto de métodos o acciones que una clase debe proporcionar. Se puede decir que en una interfaz las clases hijas están obligadas a definir los métodos y atributos declarados por la clase padre [[10]](https://atareao.es/pyldora/clases-abstractas-interfaces-y-polimorfismo/).
 
 15. Explique el concepto de sobreescritura de métodos en Python y cómo se realiza.
 
     La sobreescritura de Métodos (override) en Python se refiere a la posibilidad de que una subclase cuente con métodos con el mismo nombre que los de una clase superior pero que definen comportamientos diferentes [[11]](https://www.programadornovato.com/sobreescritura-de-metodos-override-en-python/).
 
-    La forma de realizarlo es sencillamente hacer lo que comúnmente se le dice 'caerle encima', que implica crear una clase con las mismas definiciones pero con resultados diferentes.
+    La forma de realizarlo es sencillamente hacer lo que comúnmente se le dice como 'caerle encima', que implica crear una clase con las mismas definiciones pero con resultados diferentes.
 
 
 ## Parte Práctica 2
