@@ -94,3 +94,5 @@ La `segunda parte` del código corresponde al análisis de un conjunto de datos 
 ## Análisis de la primera parte
 
 Con base en los resultados obtenidos para el primer gráfico, se observa que para el mes de Julio fue donde se dio el mayor pico de viajes aéreos, lo cual tiene sentido dado que es el mes en donde una gran parte de países dan vacaciones a sus empleados y los mismos optan por comenzar a viajar.
+
+Con base en los resultados obtenidos para el segundo gráfico, se observa que para los últimos meses registrados se ha presentado una baja en la cantidad de pasajeros que vienen al país, lo cuál se puede deber a que la temporada es baja.

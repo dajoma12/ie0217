@@ -128,8 +128,7 @@ class ManejoArchivos:
 
         print('\n--- Cantidad de pasajeros por aerolinea ---\n')
         patronesAerolinea = data.groupby('Nombre_Aerolinea')['Numero_Pasajeros'].sum()
-        # agrupa por nombre y numeros de pasajeros
-        self.grafico2 = patronesAerolinea  # guarda los datos
+
         print(patronesAerolinea)
 
         print('\n--- Viajes a Costa Rica ---\n')
@@ -139,7 +138,7 @@ class ManejoArchivos:
         # agrupa por numero de pasajeros a costa rica
         pasajeros = CostaRica['Numero_Pasajeros'].sum()
         pasajerosXMes = CostaRica.groupby('Mes')['Numero_Pasajeros'].sum()
-
+        self.grafico2 = pasajerosXMes  # guarda los datos
         print("La cantidad de viajes fue de:", cantidadViajes)
         print("El numero total de pasajeros fue de:", pasajeros)
 
@@ -153,15 +152,25 @@ class ManejoArchivos:
         grafico1 = self.grafico1
         grafico2 = self.grafico2
 
-        # Graficar los datos
+        # Graficar con un grafico de barras
         grafico1.plot(kind='bar', color='skyblue')
+        # Dar formato al grafico
         plt.title('Tendencia de salidas aéreas por mes')
         plt.xlabel('Mes')
         plt.ylabel('Salidas Realizadas')
         plt.xticks(rotation=45)
         plt.grid(True)
         plt.tight_layout()
+        plt.show()
 
+        # Graficar con un gráfico de lineas
+        grafico2.plot(kind='line', marker='o', color='blue', linestyle='-')
+        plt.title('Cantidad de pasajeros por mes a Costa Rica')
+        plt.xlabel('Mes')
+        plt.ylabel('Cantidad de Pasajeros')
+        plt.xticks(rotation=45)
+        plt.grid(True)
+        plt.tight_layout()
         plt.show()
 
 
@@ -182,7 +191,7 @@ def main():
     print("\n--- Filtro por aerolinea ---")
     # Llama al método
     archivo.filtrarAerolinea('Cape Air', 3)
-    
+
     archivo.graficarDatos()
 
 
