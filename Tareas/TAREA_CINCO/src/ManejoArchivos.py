@@ -4,15 +4,26 @@ import matplotlib.pyplot as plt
 
 
 class ManejoArchivos:
-
+    """
+    Clase para el manejo de archivos de datos y análisis.
+    """
     def __init__(self):
+        """
+        Constructor de la clase.
+        """
         self.data = self.procesarDatos()
         self.grafico1 = ''
         self.grafico2 = ''
 
     def procesarDatos(self):
+        """
+        Procesa los datos del archivo CSV.
+
+        Returns:
+            DataFrame: Los datos procesados.
+        """
         try:
-            data = pd.read_csv("Datos.csv")
+            data = pd.read_csv("../TAREA_CINCO/src/Datos.csv")
             columasEliminar = [
                 'Codigo_Aerolinea',
                 'ID_Aeropuerto_Origen',
@@ -32,9 +43,19 @@ class ManejoArchivos:
             print(f"Ha ocurrido un error: {str(e)}")
 
     def generarDatos(self, cantidad_informes):
+        """
+        Genera informes a partir de los datos.
+
+        Args:
+            cantidad_informes (int): La cantidad de informes a generar.
+
+        Returns:
+            Generator: Un generador que produce informes.
+        """
         data = self.data
 
         def generar_informe():
+
             suma_valores = {}
             contador = 0
             for index, fila in data.iterrows():
@@ -60,6 +81,13 @@ class ManejoArchivos:
         return generar_informe()
 
     def filtrarAerolinea(self, aerolinea, n):
+        """
+        Filtra los datos por aerolínea.
+
+        Args:
+            aerolinea (str): El nombre de la aerolínea.
+            n (int): El número máximo de resultados a mostrar.
+        """
         iterador = FiltroAerolineaIterator(self.data, aerolinea)
         i = 0
         for dato in iterador:
@@ -71,6 +99,9 @@ class ManejoArchivos:
                 return
 
     def analizarDatos(self):
+        """
+        Analiza los datos y muestra tendencias.
+        """
         data = self.data
 
         print('\n--- Tendencia de salidas aereas por mes ---\n')
@@ -96,6 +127,9 @@ class ManejoArchivos:
         print(pasajerosXMes)
 
     def graficarDatos(self):
+        """
+        Grafica los datos.
+        """
         grafico1 = self.grafico1
         grafico2 = self.grafico2
 

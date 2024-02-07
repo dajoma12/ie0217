@@ -2,13 +2,24 @@ import numpy as np
 
 
 class Estudiantes:
-
+    """
+    Clase para realizar operaciones con datos de estudiantes.
+    """
     def __init__(self, datos, materias):
+        """
+        Constructor de la clase.
+
+        Args:
+            datos (numpy.ndarray): Matriz de notas de los estudiantes.
+            materias (numpy.ndarray): Array con el nombre de las materias.
+        """
         self.datos = datos
         self.materias = materias
 
     def operacionConNumpy(self):
-
+        """
+        Realiza operaciones utilizando la biblioteca NumPy.
+        """
         print("\nEl promedio de notas por estudiante")
         for i in range(len(self.datos)):
             print(f"Estudiante {i+1}: {np.mean(self.datos[i])}")
