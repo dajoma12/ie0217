@@ -90,3 +90,7 @@ La `segunda parte` del código corresponde al análisis de un conjunto de datos 
 3. ¿Cuál es la diferencia entre loc y iloc en Pandas?
 
     La diferencia radica en que `loc` permite acceder a filas y columnas mediante etiquetas mientras que `iloc` permite lo mismo pero medio de indices enteros.
+
+## Análisis de la primera parte
+
+Con base en los resultados obtenidos para el primer gráfico, se observa que para el mes de Julio fue donde se dio el mayor pico de viajes aéreos, lo cual tiene sentido dado que es el mes en donde una gran parte de países dan vacaciones a sus empleados y los mismos optan por comenzar a viajar.

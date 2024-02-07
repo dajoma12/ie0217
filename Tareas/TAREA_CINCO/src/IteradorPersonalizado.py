@@ -35,9 +35,14 @@ class FiltroAerolineaIterator:
             StopIteration: Cuando no hay más elementos que cumplen el criterio
             de filtrado.
         """
+        # Itera por todos los elementos del array
         while self.index < len(self.dataframe):
+            # busca el elemento del campo index
             dato = self.dataframe.iloc[self.index]
             self.index += 1
+            # si el elemento corresponde devuelve el dato
             if dato['Nombre_Aerolinea'] == self.aerolinea:
+                # finaliza la iteracion
                 return dato
+        # lanza un excepcion
         raise StopIteration
