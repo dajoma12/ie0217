@@ -3,23 +3,33 @@
 ### Tarea 5
 
 ## Instrucciones de ejecucción
-Para poder ejecutar este código se debe estar ubicado dentro de la carpeta `.\src` y ejecutar lo siguiente en la terminal:
+Para poder ejecutar la primera parte de este código se debe estar ubicado dentro de la carpeta `.\src` y ejecutar lo siguiente en la terminal:
 
-    py Archivo.py
+    py ManejoArchivos.py
 
 Otra de las posible formas de ejecutarlo es haciendo uso del Makefile, para ello debe estar ubicado dentro de la carpeta `TAREA_CINCO`, carpeta en donde se encuentra el archivo Makefile, y ejecutar el siguiente comando en la terminal:
 
     make
 
-Esto compilara completamente el programa sin necesidad de buscar los ejecutables. También dispone de la opción de `make clean` para borrar todos archivos `__pycache__`
-
+Esto compilara completamente el programa sin necesidad de buscar los ejecutables. `
 
 Nota: Los comandos del `Makefile` deben ser siempre ejecutados desde la carpeta `TAREA_CINCO` de lo contrario no servirán.
 
-## Breve introducción al programa
+Ahora, con respecto a la segunda parte no se logro hacer que los dos programas se ejecutara en simultaneo por lo que se solicita estar ubicado dentro de las carpeta `.\src`
+y realizar un:
+
+    py Estudiantes.py
+
+## Breve introducción a los programas
+
+Para comenzar el archivo `csv` utilizado para la primera parte de esta tarea fue obtenido de la pagina:
 
     https://www.transtats.bts.gov/DL_SelectFields.aspx?gnoyr_VQ=FJE&QO_fu146_anzr=Nv4%20Pn44vr45
-    
+
+Aclarado lo anterior, la `primera parte` corresponde al código para imprimir datos relevantes del archivo .csv, así como gráficas del mismo. Se espera que cuando se ejecute con make, el usuario pueda visualizar por la terminal los datos que se investigaron, así como un par de gráficos.
+
+La `segunda parte` del código corresponde al análisis de un conjunto de datos utilizando la librería numpy de Python. En el código fuente `Estudiantes.py`, se encuentran unos arrays por los cuales se le pasan los títulos de las materias como columnas y los datos respectivos a cada uno mediante una matriz, donde las filas corresponden a la nota de cada estudiante en cada área (o materia).
+
 ## Parte teórica
 
 ### Iteradores
