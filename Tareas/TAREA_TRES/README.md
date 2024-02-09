@@ -9,7 +9,7 @@ Para poder ejecutar la `primera parte` de este código, se debe estar ubicado de
 
     make run
 
-Nota: Dentro del `src/main.cpp` de esta primera parte se encuentra un pequeño encabezado que explica que solo basta con cambiar el tipo del objeto para ver los otros dos casos, por defecto esta en complejo, es solo cambiarlo a `int` o `float` para ver los otros, sería algo como `Matriz<tipo deseado>`.
+Nota: Dentro del `src/main.cpp` de esta primera parte se encuentra un pequeño encabezado que explica que solo basta con cambiar el tipo del objeto para ver los otros dos casos; por defecto, está en `complejo`. Es solo cambiarlo a `int` o `float` para ver los otros. Sería algo como `Matriz<tipo deseado>.`
 
 Para poder ejecutar la `segunda parte` de este código, se debe estar ubicado dentro de la carpeta `TAREA_TRES` y ejecutar lo siguiente en la terminal para crear el ejecutable.
 
