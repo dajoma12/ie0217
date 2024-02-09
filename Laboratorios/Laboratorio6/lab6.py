@@ -4,6 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 import requests
+import os
 from io import StringIO  
 
 # Cargar datos
@@ -19,6 +20,11 @@ data_web = requests.get(url)
 # Se abre el archivo (o se crear en caso de no existir)
 # w: write o escribir
 # ruta: data/dataset.csv
+
+# Condicion para crear dir 'data' en caso de que no exista
+if not os.path.exists('data'):
+    os.mkdir('data')
+
 with open('data/dataset.csv', 'w') as datos:
     # escribir los datos obtenidos del URL en el archivo de la ruta
     datos.write(data_web.text)
