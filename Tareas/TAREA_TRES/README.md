@@ -4,37 +4,20 @@
 
 ## Instrucciones de ejecucción
 
-### Primera parte
-Para poder ejecutar la `primera parte` este código, se debe estar ubicado dentro de la carpeta `src` y ejecutar lo siguiente en la terminal para crear el ejecutable.
+### Primera y Segunda parte
+Para poder ejecutar la `primera parte` de este código, se debe estar ubicado dentro de la carpeta `TAREA_TRES` y ejecutar lo siguiente en la terminal para crear el ejecutable.
 
-    g++ -o tarea3.exe .\main.cpp
+    make run
 
-Una vez creado el ejecuta, basta con correrlo dentro de la carpeta.
+Nota: Dentro del `src/main.cpp` de esta primera parte se encuentra un pequeño encabezado que explica que solo basta con cambiar el tipo del objeto para ver los otros dos casos, por defecto esta en complejo, es solo cambiarlo a `int` o `float` para ver los otros, sería algo como `Matriz<tipo deseado>`.
 
-    .\tarea3.exe
+Para poder ejecutar la `segunda parte` de este código, se debe estar ubicado dentro de la carpeta `TAREA_TRES` y ejecutar lo siguiente en la terminal para crear el ejecutable.
 
-Otra de las posible formas de ejecutarlo es haciendo uso del Makefila, para ello debe estar ubicado dentro de la carpeta `TAREA_TRES`, carpeta en donde se encuentra el archivo Makefile, y ejecutar el siguiente comando en la terminal:
+    make run2
 
-    Mingw32-make -f Makefile
+Finalmente, para borrar todos archivos y ejecutables creados por usted puede ejecutar:
 
-Esto formará el archivo ejecutable, ya luego si desea ejecutarlo puede realizar el siguiente comando:
-
-     Mingw32-make -f run
-
-Finalmente, si desea borrar los archivos creados, solo basta con hacer un:
-
-     Mingw32-make -f clean
-
-Nota: Todos estos comandos deben ser siempre ejecutados desde la carpeta `TAREA_TRES` de lo contrario no servirán.
-
-### Segunda parte
-Para la `segunda parte`, por favor ingrese a la carpeta `.\src2` y ejecute desde su terminal lo siguiente:
-
-    g++ -o regulares.exe .\main.cpp
-
-Esto le genera un archivo ejecutable que luego bastaría con hacer lo siguiente para que se ejecute:
-
-    .\regulares.exe
+    make clean
 
 
 ## Parte Teórica
