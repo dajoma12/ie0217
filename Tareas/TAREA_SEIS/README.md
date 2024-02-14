@@ -14,6 +14,8 @@ En caso de no tenerla instalada, basta con hacer:
 
 Una vez instalado, es necesario dirigirse a la carpeta ubicada en el directorio `C:\Users\Su_Usuario\.kaggle` y copiar el archivo `kaggle.json` que se obtiene al registrarse en la pagina de kaggle, llendo a `settings` y luego dando `create new token`, esto descargará el archivo que contiene sus credenciales.
 
+**Nota:** Siguiendo estos pasos el programa descarga el archivo y continua su ejecución perfectamente, sin embargo, se va agregar el csv dentro de la carpeta `.\src\cars_analisys` para que en caso de que algo fallará solo bastaría con comentar lo que dice la linea 16 del main `archivo.descarga()` y el programa leería el archivo que ya se encuentra localmente. De igual forma se invita al lector a borrar el csv y seguir los pasos descritos para que observe que el programa no depende de este archivo local.
+
 ## Breve descripción  del programa
 
 Este programa utiliza la clase `DescargarDatos` para obtener un archivo de datos de Kaggle.com y procesarlo. Posteriormente, invoca la clase `Regresion` para realizar una regresión lineal con ciertos datos filtrados. Es importante mencionar que se excluyeron casos especiales que podrían distorsionar los resultados, como aquellos en los que el precio de un automóvil excede su valor nominal (posiblemente indicando una estafa). En esta etapa del programa, se generan y muestran gráficos uno por uno, junto con métricas relevantes en la consola. Después, se emplea la clase `Cluster` para procesar los datos, generar los gráficos pertinentes y calcular el resultado utilizando el método del codo y el coeficiente silhouette. Todo esto se maneja desde la función principal (`main`).

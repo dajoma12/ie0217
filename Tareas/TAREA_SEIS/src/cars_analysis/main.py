@@ -13,7 +13,7 @@ def main():
     # Declara archivo como un objeto de la clase
     archivo = DownloadClean()
     # Decarga el archivo
-    # archivo.descarga()
+    archivo.descarga()
     # Guarda el archivo limpio dentro de una variable
     df = archivo.limpieza()
 
