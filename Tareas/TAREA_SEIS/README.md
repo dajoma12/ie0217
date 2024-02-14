@@ -16,6 +16,7 @@ Una vez instalado, es necesario dirigirse a la carpeta ubicada en el directorio 
 
 ## Breve descripción  del programa
 
+Este programa utiliza la clase `DescargarDatos` para obtener un archivo de datos de Kaggle.com y procesarlo. Posteriormente, invoca la clase `Regresion` para realizar una regresión lineal con ciertos datos filtrados. Es importante mencionar que se excluyeron casos especiales que podrían distorsionar los resultados, como aquellos en los que el precio de un automóvil excede su valor nominal (posiblemente indicando una estafa). En esta etapa del programa, se generan y muestran gráficos uno por uno, junto con métricas relevantes en la consola. Después, se emplea la clase `Cluster` para procesar los datos, generar los gráficos pertinentes y calcular el resultado utilizando el método del codo y el coeficiente silhouette. Todo esto se maneja desde la función principal (`main`).
 
 ## Parte teórica
 
@@ -132,3 +133,22 @@ Una vez instalado, es necesario dirigirse a la carpeta ubicada en el directorio 
     * `PUT` Actualiza o crea recursos. No es seguro [[10]](https://www.contrive.mobi/aviorapi/HTTPMETHODS.html#:~:text=API&text=The%20primary%20or%20most%2Dcommonly,but%20are%20utilized%20less%20frequently.).
 
     * `DELETE` Usado para eliminar recursos. No es seguro [[10]](https://www.contrive.mobi/aviorapi/HTTPMETHODS.html#:~:text=API&text=The%20primary%20or%20most%2Dcommonly,but%20are%20utilized%20less%20frequently.).
+
+
+    ## Interpretación de los resultados
+
+    ### Regresiones
+
+    Con respecto a los resultados obtenidos, de las regresiones se puede observar que los modelos aparentemente intentan predecir correctamente los resultados. Por ejemplo, tiene sentido que el precio de los autos aumente conforme están más nuevos o que disminuya en función de la cantidad de kilómetros. Sin embargo, al examinar las métricas, estas indican que los modelos no predicen correctamente el comportamiento, ya que se obtuvieron coeficientes de determinación (R^2) muy bajos, siendo el más alto alrededor del 0.23. Se cree que la causa de esto es la falta de datos, debido a que para ciertos valores iniciales y finales, no hay suficientes datos de prueba.
+
+    ### Cluster
+
+
+    En lo que respecta a los clusters, para el caso de los kilómetros, se puede interpretar que las agrupaciones representan las preferencias de los clientes. La agrupación inferior refleja el máximo kilometraje que un cliente estaría dispuesto a aceptar en un automóvil, mientras que la agrupación superior incluye a aquellos clientes que no consideraron relevante el kilometraje.
+
+    Ahora, para el segundo caso, nuevamente se observan dos divisiones. La primera parece indicar el precio máximo que un cliente de ese grupo estaría dispuesto a pagar por un automóvil del año, mientras que el segundo grupo comprende a todos aquellos clientes que pagaron un precio excesivo por un automóvil de ese año.
+
+    Al evaluar las métricas, se observa que la decisión de utilizar solo dos agrupaciones para visualizar estos datos es correcta, ya que de lo contrario, los índices de desempeño comienzan a disminuir a medida que se aumentan las agrupaciones.
+
+
+
