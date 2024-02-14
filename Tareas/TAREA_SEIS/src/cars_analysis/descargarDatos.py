@@ -26,7 +26,7 @@ class DownloadClean:
         # Datos de archivo
         ruta = 'akshaydattatraykhare/car-details-dataset'
         fileName = 'CAR DETAILS FROM CAR DEKHO.csv'
-        path = '../'
+        path = './src/cars_analysis'
         try:
             # Descarga el archivo buscado en la ruta dada
             api.dataset_download_file(ruta, fileName, path)
@@ -52,7 +52,7 @@ class DownloadClean:
             # Declaración del nombre del archivo
             nombreArchivo = 'CAR%20DETAILS%20FROM%20CAR%20DEKHO.csv'
             # Lee el archivo
-            df = pd.read_csv(f'../{nombreArchivo}')
+            df = pd.read_csv(f'./src/cars_analysis/{nombreArchivo}')
             # Elimina datos duplicados
             df.drop_duplicates(inplace=True)
             # Elimina datos nulos

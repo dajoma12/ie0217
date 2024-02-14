@@ -13,7 +13,7 @@ def main():
     # Declara archivo como un objeto de la clase
     archivo = DownloadClean()
     # Decarga el archivo
-    archivo.descarga()
+    # archivo.descarga()
     # Guarda el archivo limpio dentro de una variable
     df = archivo.limpieza()
 
@@ -48,13 +48,27 @@ def main():
 
     # Instancia un objeto de tipo cluster
     manager = Clustering(df)
+    # Datos de los gráficos
     variable1 = 'km_driven'
     variable2 = 'year'
     xlabel = 'Año'
     ylabel = 'Kilometraje'
     manager.makeCluster(variable2, variable1, xlabel, ylabel)
     manager.makeElbow()
+    # Llamado a los métodos
     manager.makeSihouette()
+
+    # Instancia otro objeto de tipo cluster
+    manager2 = Clustering(df)
+    # Datos de los gráficos
+    variable1 = 'selling_price'
+    variable2 = 'year'
+    xlabel = 'Año'
+    ylabel = 'Precio de venta'
+    # Llamado a los métodos
+    manager2.makeCluster(variable2, variable1, xlabel, ylabel)
+    manager2.makeElbow()
+    manager2.makeSihouette()
 
 
 if __name__ == '__main__':
