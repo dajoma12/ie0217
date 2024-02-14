@@ -1,5 +1,3 @@
-# Makefile para la tarea 6
-
 # Utilizado para detectar el sistema operativo
 ifeq ($(OS),Windows_NT)
     # Comandos utilizados para Windows
